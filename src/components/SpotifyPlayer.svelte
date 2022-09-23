@@ -2,8 +2,7 @@
   import { onMount } from "svelte";
   import { getBaseURL } from "../utils/baseURL";
   import ProgressBar from "./ProgressBar.svelte";
-  import pkg from "sswr";
-  const { useSWR } = pkg;
+  import { useSWR } from "sswr";
 
   const {
     data: track,
