@@ -11,5 +11,10 @@ export default defineConfig({
   integrations: [tailwind(), react(), svelte()],
   output: "server",
   adapter: vercel(),
-  site: "https://abraham-dev.deno.dev/",
+  site: "https://abraham-dev.deno.dev",
+  vite: {
+    ssr: {
+      noExternal: ["@svelte-drama/suspense"],
+    },
+  },
 });

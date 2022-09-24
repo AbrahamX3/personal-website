@@ -1,29 +1,27 @@
 ---
-import SpotifyPlayer from "../components/SpotifyPlayer.svelte";
+import SpotifyPlayer from "../components/SpotifyPlayer";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Abraham | Web Developer">
   <section
-    class="h-screen snap-end text-white justify-center leading-relaxed align-middle "
+    class="h-screen min-h-screen snap-end py-8 text-white justify-center leading-relaxed align-middle"
   >
     <div class="p-4 mx-auto bg-black/95 h-full grid grid-rows-2">
-      <!-- <div>
+      <div class="text-center">
         <h2 class="text-4xl md:text-5xl font-bold">Hello, I'm Abraham!</h2>
-        <div class="w-3/5">
-          <span
-            class="text-base md:text-xl font-mono text-justify flex-nowrap flex"
+        <div
+            class="text-base md:text-xl font-mono text-center pt-2"
             >I'm a Web Developer that likes exploring all type of web
-            technogies!</span
+            technogies!</div
           >
-        </div>
-      </div> -->
-
-      <SpotifyPlayer client:visible />
-      
+      </div>
+      <div class="flex justify-center align-middle items-center">
+        <SpotifyPlayer client:visible />
+      </div>
     </div>
   </section>
-  <section
+  <!-- <section
     class="text-white snap-start pt-20 flex space-y-4 flex-col justify-center leading-relaxed align-middle px-4 h-screen"
   >
     <div class="py-6 mx-auto bg-black/95 h-full">
@@ -99,5 +97,5 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </div>
     </div>
-  </section>
+  </section> -->
 </Layout>
