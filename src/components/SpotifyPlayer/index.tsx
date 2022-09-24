@@ -12,23 +12,24 @@ import {
   ProgressBar,
 } from "./SpotifyComponents";
 
-interface TrackData {
-  ImageCoverURL: string;
-  artist: string;
-  duration_ms: number;
-  isPlaying: boolean;
-  progress_ms: number;
-  repeat_state: string;
-  shuffle_state: boolean;
-  songURL: string;
-  title: string;
-  error?: string;
-  trackURL: string;
-}
+type TrackData = {
+  ImageCoverURL: string | null | undefined;
+  artist: string | null | undefined;
+  duration_ms: number | null | undefined;
+  isPlaying: boolean | false;
+  progress_ms: number | null | undefined | 0;
+  repeat_state: string | null | undefined;
+  shuffle_state: boolean | false;
+  songURL: string | null | undefined;
+  title: string | null | undefined;
+  error?: string | null | undefined;
+  trackURL: string | null | undefined;
+  key: string | null | undefined;
+};
 
 const SpotifyPlayer = () => {
   const key = `${getBaseURL()}/api/spotify`;
-  const interval: number = 40000;
+  const interval: number = 15000;
   const options = {
     revalidateOnFocus: true,
     refreshInterval: interval,
@@ -39,10 +40,10 @@ const SpotifyPlayer = () => {
     error,
     isValidating,
     mutate,
-  } = useSWRImmutable(key, fetcher, options);
+  } = useSWRImmutable<TrackData>(key, fetcher, options);
 
   const handleRefresh = () => {
-    mutate(key);
+    mutate();
   };
 
   return (
@@ -51,29 +52,29 @@ const SpotifyPlayer = () => {
         <ErrorState error={error} />
       ) : isValidating ? (
         <LoadingState />
-      ) : track.error ? (
-        <ErrorState error={track.error} />
+      ) : track?.error ? (
+        <ErrorState error={track?.error} />
       ) : (
         <div className="flex flex-col w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gray-800 border-gray-700 p-2">
           <div className="grid grid-cols-3 w-full gap-y-2 grid-rows-2">
             <TrackInfo
-              url={track.trackURL}
-              image={track.ImageCoverURL}
-              title={track.title}
-              artist={track.artist}
+              url={track?.trackURL ?? ""}
+              image={track?.ImageCoverURL ?? ""}
+              title={track?.title ?? ""}
+              artist={track?.artist ?? ""}
             />
             <OptionsContainer>
               <Options
-                isPlaying={track.isPlaying}
-                repeat_state={track.repeat_state}
-                shuffle_state={track.shuffle_state}
+                isPlaying={track?.isPlaying ?? false}
+                repeat_state={track?.repeat_state ?? ""}
+                shuffle_state={track?.shuffle_state ?? false}
               />
               <RefreshButton handleClick={handleRefresh} />
             </OptionsContainer>
             <ProgressBar
               mutate={handleRefresh}
-              progress={track.progress_ms}
-              duration={track.duration_ms}
+              progress={track?.progress_ms ?? 0}
+              duration={track?.duration_ms ?? 0}
             />
           </div>
         </div>
