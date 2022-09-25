@@ -1,5 +1,3 @@
-import querystring from "querystring";
-
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/`;
 const client_id = import.meta.env.SPOTIFY_CLIENT_ID;
@@ -17,9 +15,9 @@ const getAccessToken = async () => {
         Authorization: "Basic " + secretID,
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: querystring.stringify({
+      body: new URLSearchParams({
         grant_type: "refresh_token",
-        refresh_token,
+        refresh_token: refresh_token,
       }),
     });
     const data = await res.json();

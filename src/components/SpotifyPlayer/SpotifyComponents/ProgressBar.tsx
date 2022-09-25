@@ -4,9 +4,15 @@ type ProgressBarProps = {
   progress: number;
   duration: number;
   mutate: () => void;
+  isPlaying: boolean;
 };
 
-const ProgressBar = ({ progress, duration, mutate }: ProgressBarProps) => {
+const ProgressBar = ({
+  isPlaying,
+  progress,
+  duration,
+  mutate,
+}: ProgressBarProps) => {
   function padTo2Digits(num: number) {
     return num.toString().padStart(2, "0");
   }
@@ -55,11 +61,15 @@ const ProgressBar = ({ progress, duration, mutate }: ProgressBarProps) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (ProgressTime + 1000 >= DurationTime) {
-        setProgressTime(duration);
-        return () => clearInterval(interval);
+      if (isPlaying) {
+        if (ProgressTime + 1000 >= DurationTime) {
+          setProgressTime(duration);
+          clearInterval(interval);
+        } else {
+          setProgressTime((prevCounter) => prevCounter + 1000);
+        }
       } else {
-        setProgressTime((prevCounter) => prevCounter + 1000);
+        clearInterval(interval);
       }
     }, 1000);
 

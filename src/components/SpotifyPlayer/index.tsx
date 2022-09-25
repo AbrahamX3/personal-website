@@ -10,6 +10,7 @@ import {
   OptionsContainer,
   RefreshButton,
   ProgressBar,
+  PasuedState,
 } from "./SpotifyComponents";
 
 type TrackData = {
@@ -55,29 +56,33 @@ const SpotifyPlayer = () => {
       ) : track?.error ? (
         <ErrorState error={track?.error} />
       ) : (
-        <div className="flex flex-col w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gray-800 border-gray-700 p-2">
-          <div className="grid grid-cols-3 w-full gap-y-2 grid-rows-2">
-            <TrackInfo
-              url={track?.trackURL ?? ""}
-              image={track?.ImageCoverURL ?? ""}
-              title={track?.title ?? ""}
-              artist={track?.artist ?? ""}
-            />
-            <OptionsContainer>
-              <Options
-                isPlaying={track?.isPlaying ?? false}
-                repeat_state={track?.repeat_state ?? ""}
-                shuffle_state={track?.shuffle_state ?? false}
+        <>
+          <PasuedState isPlaying={track?.isPlaying ?? false} />
+
+          <div className="flex flex-col w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gray-800 border-gray-700 p-2">
+            <div className="grid grid-cols-3 w-full gap-y-2 grid-rows-2">
+              <TrackInfo
+                url={track?.trackURL ?? ""}
+                image={track?.ImageCoverURL ?? ""}
+                title={track?.title ?? ""}
+                artist={track?.artist ?? ""}
               />
-              <RefreshButton handleClick={handleRefresh} />
-            </OptionsContainer>
-            <ProgressBar
-              mutate={handleRefresh}
-              progress={track?.progress_ms ?? 0}
-              duration={track?.duration_ms ?? 0}
-            />
+              <OptionsContainer>
+                <Options
+                  repeat_state={track?.repeat_state ?? ""}
+                  shuffle_state={track?.shuffle_state ?? false}
+                />
+                <RefreshButton handleClick={handleRefresh} />
+              </OptionsContainer>
+              <ProgressBar
+                isPlaying={track?.isPlaying ?? false}
+                mutate={handleRefresh}
+                progress={track?.progress_ms ?? 0}
+                duration={track?.duration_ms ?? 0}
+              />
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

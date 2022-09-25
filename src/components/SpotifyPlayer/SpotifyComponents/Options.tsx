@@ -1,12 +1,11 @@
 import RefreshButton from "./RefreshButton";
 
 type OptionsProps = {
-  isPlaying: boolean;
   repeat_state: string;
   shuffle_state: boolean;
 };
 
-const Options = ({ isPlaying, repeat_state, shuffle_state }: OptionsProps) => {
+const Options = ({ repeat_state, shuffle_state }: OptionsProps) => {
   return (
     <>
       {shuffle_state ? (

@@ -10,5 +10,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [tailwind(), react(), svelte()],
   adapter: vercel(),
+  output: "server",
   site: "https://abraham-dev.vercel.app",
 });
