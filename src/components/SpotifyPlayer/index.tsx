@@ -50,11 +50,15 @@ const SpotifyPlayer = () => {
   return (
     <div className="lg:w-96 h-4 relative w-full">
       {error != undefined ? (
-        <ErrorState error={error} />
+        <ErrorState error={track?.error ?? ""}>
+          <RefreshButton onClick={handleRefresh} />
+        </ErrorState>
       ) : isValidating ? (
         <LoadingState />
       ) : track?.error ? (
-        <ErrorState error={track?.error} />
+        <ErrorState error={track?.error ?? ""}>
+          <RefreshButton handleClick={handleRefresh} />
+        </ErrorState>
       ) : (
         <>
           <PasuedState isPlaying={track?.isPlaying ?? false}>
