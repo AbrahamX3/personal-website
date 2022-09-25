@@ -14,12 +14,16 @@ import Layout from "../layouts/Layout.astro";
         <div
           class="text-base md:text-xl font-mono max-w-xl mx-auto text-center pt-3 pb-4"
         >
-          I'm a Web Developer that likes exploring all type of web technogies!
+          A Web Developer that likes exploring all type of web technologies!
         </div>
         <Skills />
       </div>
-      <div class="flex flex-col items-center w-full align-middle mx-auto justify-center pt-12">
-        <h1 class="text-white text-3xl font-bold pb-4">What am I listening to?</h1>
+      <div
+        class="flex flex-col items-center w-full align-middle mx-auto justify-center pt-12 pb-6"
+      >
+        <h1 class="text-white text-3xl font-bold pb-4">
+          What am I listening to?
+        </h1>
         <SpotifyPlayer client:load />
       </div>
     </div>
