@@ -11,5 +11,4 @@ export default defineConfig({
   integrations: [tailwind(), react(), svelte()],
   output: "server",
   adapter: vercel(),
-  site: "https://abraham-dev.vercel.app",
 });
