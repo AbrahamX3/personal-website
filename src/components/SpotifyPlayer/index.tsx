@@ -57,7 +57,9 @@ const SpotifyPlayer = () => {
         <ErrorState error={track?.error} />
       ) : (
         <>
-          <PasuedState isPlaying={track?.isPlaying ?? false} />
+          <PasuedState isPlaying={track?.isPlaying ?? false}>
+            <RefreshButton handleClick={handleRefresh} />
+          </PasuedState>
 
           <div className="flex flex-col w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gray-800 border-gray-700 p-2">
             <div className="grid grid-cols-3 w-full gap-y-2 grid-rows-2">
