@@ -1,7 +1,6 @@
-// import ProgressBar from "./ProgressBar.svelte";
 import { getBaseURL } from "../utils/baseURL";
 import useSWRImmutable from "swr/immutable";
-
+// components
 import ErrorState from "./ErrorState";
 import LoadingState from "./LoadingState";
 import Options from "./Options";
