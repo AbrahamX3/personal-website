@@ -1,17 +1,15 @@
 // import ProgressBar from "./ProgressBar.svelte";
-import { getBaseURL } from "../../utils/baseURL";
+import { getBaseURL } from "../utils/baseURL";
 import useSWRImmutable from "swr/immutable";
 
-import {
-  Options,
-  LoadingState,
-  ErrorState,
-  TrackInfo,
-  OptionsContainer,
-  RefreshButton,
-  ProgressBar,
-  PasuedState,
-} from "./SpotifyComponents";
+import ErrorState from "./ErrorState";
+import LoadingState from "./LoadingState";
+import Options from "./Options";
+import OptionsContainer from "./OptionsContainer";
+import TrackInfo from "./TrackInfo";
+import ProgressBar from "./ProgressBar";
+import RefreshButton from "./RefreshButton";
+import PasuedState from "./PausedState";
 
 type TrackData = {
   ImageCoverURL: string | null | undefined;
