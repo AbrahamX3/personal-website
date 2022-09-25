@@ -1,14 +1,14 @@
-import { getBaseURL } from "../utils/baseURL";
+import { getBaseURL } from "../../utils/baseURL";
 import useSWRImmutable from "swr/immutable";
 // components
-import ErrorState from "./ErrorState";
-import LoadingState from "./LoadingState";
-import Options from "./Options";
-import OptionsContainer from "./OptionsContainer";
-import TrackInfo from "./TrackInfo";
-import ProgressBar from "./ProgressBar";
-import RefreshButton from "./RefreshButton";
-import PasuedState from "./PausedState";
+import ErrorState from "./SpotifyErrorState";
+import LoadingState from "./SpotifyLoadingState";
+import Options from "./SpotifyOptions";
+import OptionsContainer from "./SpotifyOptionsContainer";
+import TrackInfo from "./SpotifyTrackInfo";
+import ProgressBar from "./SpotifyProgressBar";
+import RefreshButton from "./SpotifyRefreshButton";
+import PasuedState from "./SpotifyPausedState";
 
 type TrackData = {
   ImageCoverURL: string | null | undefined;
@@ -62,7 +62,7 @@ const SpotifyPlayer = () => {
             <RefreshButton handleClick={handleRefresh} />
           </PasuedState>
 
-          <div className="flex flex-col w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gray-800 border-gray-700 p-2">
+          <div className="flex flex-col w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gradient-to-r from-gray-600 via-gray-700 border-2 border-white/30 to-gray-800 backdrop-blur-md p-2">
             <div className="grid grid-cols-3 w-full gap-y-2 grid-rows-2">
               <TrackInfo
                 url={track?.trackURL ?? ""}

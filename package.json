@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev --host",
+    "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview ./dist",
@@ -14,6 +14,7 @@
     "@astrojs/react": "^1.1.4",
     "@astrojs/tailwind": "^2.0.1",
     "@astrojs/vercel": "^2.0.0",
+    "@julian_cataldo/astro-tooltips": "^0.11.1",
     "astro": "^1.3.0",
     "swr": "^1.3.0",
     "tailwindcss": "^3.1.8"

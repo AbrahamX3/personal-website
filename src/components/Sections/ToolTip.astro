@@ -1,0 +1,15 @@
+---
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<a title={name} role="tooltip" data-tooltip-placement="top">
+  <span
+    class="group cursor-pointer mt-8 px-8 justify-center align-middle flex items-center text-white hover:text-gray-400 transition-all ease-in-out duration-300"
+  >
+    <slot />
+  </span>
+</a>

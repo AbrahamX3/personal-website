@@ -11,7 +11,7 @@ const TrackInfo = ({ url, image, title, artist }: TrackInfoProps) => {
       <a
         href={url}
         target="_blank"
-        className="flex items-center hover:bg-gray-700/60 pr-2 rounded-lg col-span-2 align-middle space-x-4"
+        className="flex items-center transition-all ease-in duration-150 hover:bg-gray-800/60 pr-2 rounded-lg col-span-2 align-middle space-x-4"
       >
         <img
           src={image}

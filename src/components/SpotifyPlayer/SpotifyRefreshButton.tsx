@@ -1,7 +1,7 @@
 const RefreshButton = ({ handleClick }: any) => {
   return (
     <>
-      <div className="h-7 rounded-xl w-[1px] bg-spotify-gray/20 items-center justify-center align-middle hidden sm:flex" />
+      <div className="h-7 rounded-xl w-[1px] bg-white/60 items-center justify-center align-middle hidden sm:flex" />
 
       <button onClick={handleClick} title="Refresh">
         <svg

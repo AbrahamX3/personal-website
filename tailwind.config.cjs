@@ -7,8 +7,10 @@ module.exports = {
         spotify: {
           green: "#1DB954",
           gray: "#d4d4d4",
-          black: "#191414",
         },
+      },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
       },
     },
   },

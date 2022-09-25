@@ -1,4 +1,4 @@
-import RefreshButton from "./RefreshButton";
+import RefreshButton from "./SpotifyRefreshButton";
 
 type OptionsProps = {
   repeat_state: string;

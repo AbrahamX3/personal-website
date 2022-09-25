@@ -62,6 +62,10 @@ const ProgressBar = ({
   useEffect(() => {
     const interval = setInterval(() => {
       if (isPlaying) {
+        if (ProgressTime == DurationTime) {
+          mutate();
+          clearInterval(interval);
+        }
         if (ProgressTime + 1000 >= DurationTime) {
           setProgressTime(duration);
           clearInterval(interval);
@@ -75,10 +79,6 @@ const ProgressBar = ({
 
     return () => clearInterval(interval);
   }, [ProgressTime]);
-
-  if (ProgressTime == DurationTime) {
-    mutate();
-  }
 
   return (
     <>

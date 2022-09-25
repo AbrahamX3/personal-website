@@ -1,4 +1,6 @@
 ---
+import Tooltips from "@julian_cataldo/astro-tooltips/Tooltips.astro";
+import "../styles/base.css";
 export interface Props {
   title: string;
 }
@@ -14,12 +16,24 @@ const { title } = Astro.props;
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
     />
-    <meta name="description" content="Abraham's Personal Website, I'm a Web Developer">
+    <meta
+      name="description"
+      content="Abraham's Personal Website, I'm a Web Developer"
+    />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <Tooltips interactive={false}  />
   </head>
-  <body class="bg-black container md:max-w-xl max-w-md">
+  <body
+    class="bg-gradient-to-t font-nunito from-gray-700 via-gray-900 to-black container md:max-w-xl max-w-md"
+  >
     <main class="snap-y snap-mandatory overflow-auto h-screen w-screen">
       <slot />
     </main>

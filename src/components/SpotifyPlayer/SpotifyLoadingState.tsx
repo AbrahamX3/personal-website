@@ -1,6 +1,6 @@
 const LoadingState = () => {
   return (
-    <div className="flex w-full h-20 align-middle items-center justify-center space-x-2 rounded-lg shadow-md hover:bg-gray-800/80  bg-gray-800 border-gray-700 p-2">
+    <div className="flex justify-center flex-row space-x-2 w-full h-28 align-middle items-center rounded-lg shadow-md cursor-pointer bg-gradient-to-r from-gray-600 via-gray-700 border-2 border-white/30 to-gray-800 backdrop-blur-md p-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

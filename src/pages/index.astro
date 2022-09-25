@@ -1,22 +1,25 @@
 ---
-import SpotifyPlayer from "../components/SpotifyPlayer";
+import SpotifyPlayer from "../components/SpotifyPlayer/SpotifyPlayer";
+import Skills from "../components/Sections/Skills.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Abraham | Web Developer">
   <section
-    class="h-screen min-h-screen snap-end py-8 text-white justify-center leading-relaxed align-middle"
+    class="h-screen min-h-screen py-8 text-white justify-between leading-relaxed align-middle"
   >
-    <div class="p-4 mx-auto bg-black/95 flex flex-col justify-between">
+    <div class="p-4 mx-auto flex flex-col justify-between">
       <div class="text-center">
         <h2 class="text-4xl md:text-5xl font-bold">Hello, I'm Abraham!</h2>
         <div
-          class="text-base md:text-xl font-mono max-w-xl mx-auto text-center pt-3"
+          class="text-base md:text-xl font-mono max-w-xl mx-auto text-center pt-3 pb-4"
         >
           I'm a Web Developer that likes exploring all type of web technogies!
         </div>
+        <Skills />
       </div>
-      <div class="flex justify-center align-middle items-center mt-12">
+      <div class="flex flex-col items-center w-full align-middle mx-auto justify-center pt-12">
+        <h1 class="text-white text-3xl font-bold pb-4">What am I listening to?</h1>
         <SpotifyPlayer client:load />
       </div>
     </div>
