@@ -7,10 +7,8 @@ import ToolTip from "../components/Sections/ToolTip.astro";
 ---
 
 <Layout title="Abraham | Web Developer">
-  <section
-    class="h-screen min-h-screen p-4 text-white justify-between leading-relaxed align-middle"
-  >
-    <div class="text-center text-white pt-8 pb-4">
+  <section class="flex flex-col space-y-8">
+    <div class="text-center text-white">
       <h2 class="text-4xl md:text-5xl font-bold">Hello, I'm Abraham!</h2>
       <div
         class="text-base md:text-xl font-mono lg:max-w-lg max-w-md mx-auto text-center pt-3"
@@ -18,19 +16,25 @@ import ToolTip from "../components/Sections/ToolTip.astro";
         A Web Developer that likes exploring all type of web technologies!
       </div>
     </div>
-    <div class="py-4">
+    <div
+      class="flex flex-wrap justify-center items-center align-middle mx-auto"
+    >
       <Skills />
     </div>
-    <div
-      class="flex lg:flex-row flex-col justify-between mx-auto items-center align-middle max-w-4xl"
-    >
-      <Socials />
-      <div class="flex flex-col justify-center items-center">
-        <h1
-          class="text-white text-lg md:text-3xl font-bold pb-4 flex flex-wrap items-center align-middle justify-center"
+    <div class="w-full flex md:flex-row lg:flex-row flex-col md:justify-between items-center align-middle justify-center">
+      <div class="flex flex-col items-center align-middle mx-auto">
+        <h2 class="text-2xl md:text-4xl text-white font-bold mb-4">My Socials</h2>
+        <div
+          class="flex md:flex-row lg:flex-row flex-row items-center align-middle justify-between"
+        >
+          <Socials />
+        </div>
+      </div>
+      <div>
+        <div
+          class="text-white flex-row text-lg md:text-3xl font-bold flex items-center align-middle justify-center"
         >
           <span>What am I listening to on</span>
-
           <a
             target="_blank"
             data-tooltip-placement="left"
@@ -48,9 +52,8 @@ import ToolTip from "../components/Sections/ToolTip.astro";
               ></path>
             </svg>
           </a>
-
-          <span>?</span>
-        </h1>
+          <span class="ml-2">?</span>
+        </div>
         <SpotifyPlayer client:visible />
       </div>
     </div>

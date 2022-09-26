@@ -45,7 +45,7 @@ const SpotifyPlayer = () => {
   };
 
   return (
-    <div className="lg:w-96 relative w-full mb-8">
+    <div className="lg:w-96 text-white relative w-full mx-auto mb-8">
       {error != undefined ? (
         <ErrorState error={track?.error ?? ""}>
           <RefreshButton onClick={handleRefresh} />
