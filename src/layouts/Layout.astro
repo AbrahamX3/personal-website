@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scrollbar-track-slate-300 scrollbar-thin scrollbar-thumb-slate-900">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -28,7 +28,7 @@ const { title } = Astro.props;
     <Tooltips interactive={false} delay={[500, 0]} placement="top" />
   </head>
   <body
-    class="h-screen font-nunito bg-slate-800 md:max-w-5xl max-w-4xl mx-auto"
+    class="h-screen font-nunito bg-slate-800 md:max-w-5xl max-w-4xl mx-auto selection:bg-slate-400"
   >
     <main class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 sm:py-20">
       <slot />
