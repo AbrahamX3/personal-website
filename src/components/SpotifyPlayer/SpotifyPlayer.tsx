@@ -32,7 +32,15 @@ const SpotifyPlayer = () => {
     revalidateOnFocus: true,
     refreshInterval: interval,
   };
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const fetcher = (url: string) =>
+    fetch(url, {
+      method: "GET",
+      headers: {
+        mode: "cors",
+        credentials: "include",
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
   const {
     data: track,
     error,
