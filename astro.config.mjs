@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [tailwind(), react(), vercel()],
   adapter: vercel(),
   output: "server",
-  site: "https://abraham-dev.vercel.app",
+  site: "https://www.abraham-dev.tech",
   vite: {
     plugins: [ViteMinifyPlugin({})],
   },
