@@ -39,6 +39,7 @@ const SpotifyPlayer = () => {
         mode: "cors",
         credentials: "include",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
     }).then((res) => res.json());
   const {
