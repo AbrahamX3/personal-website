@@ -49,7 +49,7 @@ export async function get() {
       );
     }
     const data = await res.json();
-    
+
     const trackURL = data.item.external_urls.spotify;
     const ImageCoverURL = data.item.album.images[0].url;
     const artist = data.item.artists
