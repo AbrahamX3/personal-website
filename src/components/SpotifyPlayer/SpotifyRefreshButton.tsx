@@ -5,7 +5,7 @@ const RefreshButton = ({ handleClick }: any) => {
 
       <button onClick={handleClick} title="Refresh">
         <svg
-          className="w-6 h-6 duration-150 transition-all ease-in block hover:text-spotify-green text-spotify-gray"
+          className="w-6 h-6 duration-150 transition-colors ease-in block hover:text-sky-300 text-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

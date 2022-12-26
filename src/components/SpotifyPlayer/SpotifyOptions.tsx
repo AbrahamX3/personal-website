@@ -11,7 +11,7 @@ const Options = ({ repeat_state, shuffle_state }: OptionsProps) => {
       {shuffle_state ? (
         <span title="Shuffle Enabled">
           <svg
-            className="w-6 h-8 fill-spotify-green"
+            className="w-6 h-8 fill-sky-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -22,7 +22,7 @@ const Options = ({ repeat_state, shuffle_state }: OptionsProps) => {
       ) : (
         <span title="Shuffle Disabled">
           <svg
-            className="w-6 h-8 fill-spotify-gray"
+            className="w-6 h-8 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -35,7 +35,7 @@ const Options = ({ repeat_state, shuffle_state }: OptionsProps) => {
       {repeat_state == "off" ? (
         <span title="Repeat Disabled">
           <svg
-            className="w-6 h-8 fill-spotify-gray"
+            className="w-6 h-8 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -46,7 +46,7 @@ const Options = ({ repeat_state, shuffle_state }: OptionsProps) => {
       ) : repeat_state == "track" ? (
         <span title="Repeat One Enabled">
           <svg
-            className="w-6 h-8 text-spotify-green"
+            className="w-6 h-8 text-sky-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -60,7 +60,7 @@ const Options = ({ repeat_state, shuffle_state }: OptionsProps) => {
       ) : (
         <span title="Repeat Enabled">
           <svg
-            className="w-6 h-8 text-spotify-green"
+            className="w-6 h-8 text-sky-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
