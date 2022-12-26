@@ -85,9 +85,9 @@ const ProgressBar = ({
       <div className="col-span-3">
         <div className="flex space-x-2 align-middle items-center justify-between">
           <div>{convertMsToTime(ProgressTime, duration)}</div>
-          <div className="w-full bg-gray-700 rounded-lg">
+          <div className="w-full border-2 border-white/30 backdrop-blur-md bg-transparent rounded-md">
             <div
-              className="w-full h-2 rounded-lg bg-spotify-green"
+              className="w-full h-2 rounded-lg bg-white/60"
               style={{
                 width: `${(ProgressTime / DurationTime) * 100}%`,
               }}

@@ -1,6 +1,6 @@
 ---
-import Tooltips from "@julian_cataldo/astro-tooltips/Tooltips.astro";
 import "../styles/base.css";
+
 export interface Props {
   title: string;
 }
@@ -11,7 +11,7 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html
   lang="en"
-  class="scroll-smooth h-full bg-slate-800 scrollbar-track-slate-300 scrollbar-thin scrollbar-thumb-slate-500"
+  class="scroll-smooth scrollbar-track-white/20 scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-white/60 selection:bg-transparent selection:text-black/50"
 >
   <head>
     <meta charset="UTF-8" />
@@ -23,19 +23,18 @@ const { title } = Astro.props;
       name="description"
       content="Abraham's Personal Website - Web Developer"
     />
-
-    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="http://abraham-dev.tech/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Abraham | Web Developer" />
-    <meta name="description" content="Abraham's Personal Website - Web Developer">
+    <meta
+      name="description"
+      content="Abraham's Personal Website - Web Developer"
+    />
     <meta
       property="og:description"
       content="Abraham's Personal Website - Web Developer"
     />
-    <meta property="og:image" content="https://www.abraham-dev.tech/logo.png"  />
-
-    <!-- Twitter Meta Tags -->
+    <meta property="og:image" content="https://www.abraham-dev.tech/logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="abraham-dev.tech" />
     <meta property="twitter:url" content="http://abraham-dev.tech/" />
@@ -44,20 +43,22 @@ const { title } = Astro.props;
       name="twitter:description"
       content="Abraham's Personal Website - Web Developer"
     />
-    <meta name="twitter:image" content="https://www.abraham-dev.tech/logo.png" />
+    <meta
+      name="twitter:image"
+      content="https://www.abraham-dev.tech/logo.png"
+    />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <Tooltips interactive={false} delay={[500, 0]} placement="top" />
     <script>
       import { inject } from "@vercel/analytics";
       inject();
     </script>
   </head>
   <body
-    class="h-full font-nunito p-4 md:max-w-5xl max-w-4xl mx-auto selection:bg-slate-400"
+    class="font-nunito body-bg"
   >
     <slot />
   </body>

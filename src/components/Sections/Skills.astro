@@ -1,10 +1,13 @@
 ---
-import ToolTip from "./ToolTip.astro";
-
 const Skills = [
   "NextJS",
-  "Astro",
+  "Prisma",
+  "tRPC",
   "TailwindCSS",
+  "Vercel",
+  "Supabase",
+  "Railway",
+  "Astro",
   "React",
   "Svelte",
   "SvelteKit",
@@ -15,24 +18,17 @@ const Skills = [
   "PostgrSQL",
   ".NET",
   "Bootstrap",
-  "HTML",
-  "CSS",
   "NodeJS",
   "JQuery",
   "Git",
-  "Prisma",
-  "Vercel",
-  "tRPC",
-  "Supabase",
   "GraphQL",
-  "Railway",
 ];
 ---
 
-<div class="flex overflow-x-scroll px-4 scrollbar-track-slate-300 scrollbar-thin scrollbar-thumb-slate-500 py-4">
+<div class="flex overflow-x-scroll px-4 scrollbar-track-white/20 scrollbar-thin scrollbar-thumb-white/60 scrollbar-thumb-rounded-md scrollbar-track-rounded-md py-4">
   {
     Skills.map((skill) => (
-      <div class="mx-2 flex flex-col justify-center align-middle items-center rounded-lg text-center my-2 px-4 py-1 text-white bg-slate-500">
+      <div class="mx-2 flex flex-col justify-center align-middle items-center rounded-lg text-center my-2 px-4 py-1 text-white border-2 border-white/30 backdrop-blur-md bg-transparent">
         <span class="font-semibold">{skill}</span>
       </div>
     ))

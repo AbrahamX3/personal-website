@@ -11,22 +11,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^1.1.4",
-    "@astrojs/tailwind": "^2.0.2",
-    "@astrojs/vercel": "^2.1.0",
-    "@julian_cataldo/astro-tooltips": "^0.11.1",
-    "@vercel/analytics": "^0.1.3",
-    "astro": "^1.4.2",
-    "swr": "^1.3.0",
-    "tailwindcss": "^3.1.8",
-    "web-vitals": "^3.0.4"
+    "@astrojs/react": "^1.2.2",
+    "@astrojs/tailwind": "^2.1.3",
+    "@astrojs/vercel": "^2.3.6",
+    "@vercel/analytics": "^0.1.6",
+    "astro": "^1.7.2",
+    "swr": "^2.0.0",
+    "tailwindcss": "^3.2.4",
+    "web-vitals": "^3.1.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.23",
-    "@types/react": "^18.0.21",
-    "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.5",
-    "tailwind-scrollbar": "^2.0.1",
-    "vite-plugin-minify": "^1.5.2"
+    "@types/node": "^18.11.17",
+    "@types/react": "^18.0.26",
+    "prettier": "^2.8.1",
+    "prettier-plugin-astro": "^0.7.0",
+    "tailwind-scrollbar": "^2.0.1"
   }
 }
