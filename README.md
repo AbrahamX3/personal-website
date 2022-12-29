@@ -1,7 +1,4 @@
 # Abraham's Personal Website
-
----
-
 ## Tech used:
 
 - [Astro](https://astro.build/) - Framework
