@@ -1,4 +1,8 @@
-const RefreshButton = ({ handleClick }: any) => {
+interface IHandleClick {
+  handleClick: () => void;
+}
+
+const RefreshButton = ({ handleClick }: IHandleClick) => {
   return (
     <>
       <div className="h-7 rounded-xl w-[1px] bg-white/60 items-center justify-center align-middle hidden sm:flex" />
