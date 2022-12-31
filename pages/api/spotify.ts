@@ -4,7 +4,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if(req.body === process.env.API_KEY){
     const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
     const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/`;
     const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -65,9 +64,4 @@ export default async function handler(
       progress_ms,
       duration_ms,
     });
-  } else {
-    return res.status(401).json({
-      error: "Not Authorized",
-    });
-  }
 }
