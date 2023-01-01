@@ -1,22 +1,22 @@
 export default function Head() {
   return (
     <>
-      <title>Abraham | Web Developer</title>
+      <title>Abraham | Full-Stack Web Developer</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
-        content="Abraham's Personal Website - Web Developer"
+        content="Abraham's Personal Website - Full-Stack Web Developer"
       />
       <meta property="og:url" content="http://abraham-dev.tech/" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Abraham | Web Developer" />
+      <meta property="og:title" content="Abraham | Full-Stack Web Developer" />
       <meta
         name="description"
-        content="Abraham's Personal Website - Web Developer"
+        content="Abraham's Personal Website - Full-Stack Web Developer"
       />
       <meta
         property="og:description"
-        content="Abraham's Personal Website - Web Developer"
+        content="Abraham's Personal Website - Full-Stack Web Developer"
       />
       <meta
         property="og:image"
@@ -25,10 +25,10 @@ export default function Head() {
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="abraham-dev.tech" />
       <meta property="twitter:url" content="http://abraham-dev.tech/" />
-      <meta name="twitter:title" content="Abraham | Web Developer" />
+      <meta name="twitter:title" content="Abraham | Full-Stack Web Developer" />
       <meta
         name="twitter:description"
-        content="Abraham's Personal Website - Web Developer"
+        content="Abraham's Personal Website - Full-Stack Web Developer"
       />
       <meta
         name="twitter:image"
