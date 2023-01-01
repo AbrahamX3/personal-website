@@ -2,13 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function GetSpotifyData() {
-  const GetBaseUrl = () => {
-    if (typeof window !== "undefined") return "";
-    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
-    return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
+  const GetBaseUrl = async () => {
+    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+    return `http://localhost:${process.env.PORT ?? 3000}`;
   };
 
-  const res = await fetch(GetBaseUrl() + "/api/spotify", {
+  const res = await fetch((await GetBaseUrl()) + "/api/spotify", {
     next: { revalidate: 60 },
   });
 
@@ -19,6 +18,7 @@ async function GetSpotifyData() {
 
 export default async function SpotifyPlaying() {
   const data = await GetSpotifyData();
+
   return (
     <>
       {data.isPlaying ? (
