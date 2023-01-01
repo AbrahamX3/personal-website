@@ -31,10 +31,10 @@ export default function About() {
           </Link>{" "}
           on notion!
         </p>
-        <p className="about-box">
+        {/* <p className="about-box">
           I enjoy listening to all type of music, in fact, check out what
           I&apos;m currently listening to right now below!
-        </p>
+        </p> */}
       </div>
     </div>
   );
