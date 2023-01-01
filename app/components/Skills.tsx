@@ -1,0 +1,51 @@
+import Balancer from "react-wrap-balancer";
+
+export default function Skills() {
+  const Skills = [
+    "NextJS",
+    "Prisma",
+    "tRPC",
+    "TailwindCSS",
+    "Vercel",
+    "Supabase",
+    "Railway",
+    "Astro",
+    "React",
+    "Svelte",
+    "SvelteKit",
+    "PHP",
+    "TypeScript",
+    "JavaScript",
+    "MySQL",
+    "PostgrSQL",
+    ".NET",
+    "Bootstrap",
+    "NodeJS",
+    "JQuery",
+    "Git",
+  ];
+
+  return (
+    <div className="flex flex-col items-center align-middle justify-center">
+      <div className="w-full text-center">
+        <Balancer>
+          <h2 className="text-xl text-white font-bold font-cabinet-grotesk py-6">
+            Technologies I work with
+          </h2>
+        </Balancer>
+      </div>
+      <div className="w-full">
+        <div className="flex overflow-x-scroll w-full px-4 scrollbar-track-white/20 scrollbar-thin scrollbar-thumb-white/60 scrollbar-thumb-rounded-md scrollbar-track-rounded-md py-4">
+          {Skills.map((skill, index) => (
+            <div
+              key={index}
+              className="mx-2 flex flex-col justify-center align-middle items-center rounded-lg text-center my-2 px-4 py-1 text-white border-2 border-white/30 backdrop-blur-md bg-white/10"
+            >
+              <span className="font-semibold">{skill}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

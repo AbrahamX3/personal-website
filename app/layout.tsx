@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${cabinet_grotesk.variable} font-satoshi scroll-smooth scrollbar-track-white/20 scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-white/60 selection:bg-transparent selection:text-black/50`}
+      className={`${satoshi.variable} ${cabinet_grotesk.variable} font-satoshi scroll-smooth scrollbar-track-white/20 scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-white/60 selection:bg-white/40 selection:text-black/50`}
     >
       <body>
         {children}

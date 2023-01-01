@@ -24,7 +24,7 @@ export default async function SpotifyPlaying() {
       {data.isPlaying ? (
         <div className="w-full">
           <div>
-            <div className="grid grid-cols-3 h-20 text-center place-self-center place-content-center place-items-center rounded-lg shadow-md cursor-pointer bg-transparent border-2 border-white/30 backdrop-blur-md p-2">
+            <div className="grid grid-cols-3 h-20 text-center place-self-center place-content-center place-items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
               <div className="flex flex-col align-middle place-self-start">
                 <Image
                   src={data.cover}
@@ -35,17 +35,17 @@ export default async function SpotifyPlaying() {
                   className="w-16 h-16 aspect-square rounded-lg"
                 />
               </div>
-              <div className="flex flex-col overflow-hidden space-y-1 align-middle">
+              <div className="flex flex-col text-white overflow-hidde w-full space-y-1 align-middle">
                 <Link
                   href={data.url}
                   target="_blank"
-                  className="truncate font-bold text-white"
+                  className="truncate font-bold"
                   title={data.title}
                   aria-label="Open Current Song on Spotify"
                 >
                   {data.title}
                 </Link>
-                <p className="truncate text-sm text-white" title={data.artist}>
+                <p className="truncate text-sm" title={data.artist}>
                   {data.artist}
                 </p>
               </div>
@@ -75,7 +75,7 @@ export default async function SpotifyPlaying() {
       ) : (
         <div className="w-full">
           <div>
-            <div className="flex flex-col h-20 text-center justify-center align-middle items-center rounded-lg shadow-md cursor-pointer bg-transparent border-2 border-white/30 backdrop-blur-md p-2">
+            <div className="flex flex-col h-20 text-center justify-center align-middle items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
               <span className="text-center text-white font-semibold text-lg">
                 No track is currently playing.
               </span>
