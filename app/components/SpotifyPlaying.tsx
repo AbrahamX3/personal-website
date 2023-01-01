@@ -4,16 +4,15 @@ import Image from "next/image";
 async function GetSpotifyData() {
   const GetBaseUrl = () => {
     if (typeof window !== "undefined") return "";
-    if (process.env.NODE_ENV == "production")
-      return `https://${process.env.VERCEL_URL}`;
-    return `http://localhost:${process.env.PORT ?? 3000}`;
+    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
+    return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
   };
 
   const res = await fetch(GetBaseUrl() + "/api/spotify", {
     next: { revalidate: 60 },
   });
 
-  if (!res.ok) throw new Error("Failed to fetch data from Spotify API.");
+  if (!res.ok) return { isPlaying: false };
 
   return res.json();
 }
