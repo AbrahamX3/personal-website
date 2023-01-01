@@ -2,17 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function GetSpotifyData() {
-  const GetBaseUrl = async () => {
+  const GetBaseUrl = () => {
     if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
     return `http://localhost:${process.env.PORT ?? 3000}`;
   };
 
-  const res = await fetch(
-    `http://localhost:${process.env.PORT ?? 3000}` + "/api/spotify",
-    {
-      next: { revalidate: 60 },
-    }
-  );
+  const res = await fetch(GetBaseUrl() + "/api/spotify", {
+    next: { revalidate: 60 },
+  });
 
   if (!res.ok) return { isPlaying: false };
 
@@ -21,7 +18,6 @@ async function GetSpotifyData() {
 
 export default async function SpotifyPlaying() {
   const data = await GetSpotifyData();
-
   return (
     <>
       {data.isPlaying ? (
