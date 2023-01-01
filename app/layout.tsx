@@ -1,5 +1,6 @@
 import "./globals.css";
 import localFont from "@next/font/local";
+import { VercelAnalytics } from "./components/VercelAnalytics";
 
 const satoshi = localFont({
   variable: "--font-satoshi",
@@ -29,7 +30,10 @@ export default function RootLayout({
       lang="en"
       className={`${satoshi.variable} ${cabinet_grotesk.variable} font-satoshi scroll-smooth scrollbar-track-white/20 scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-white/60 selection:bg-transparent selection:text-black/50`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <VercelAnalytics />
+      </body>
     </html>
   );
 }
