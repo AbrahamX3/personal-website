@@ -41,8 +41,10 @@ export default function HomePage() {
           <div className="flex flex-col col-span-1 justify-center mx-auto space-y-6 align-middle">
             <About />
             <div className="mx-auto w-full md:w-full lg:1/2">
-              {/* @ts-expect-error Server Component */}
-              <SpotifyPlaying />
+              <Suspense fallback={<SpotifyLoading />}>
+                {/* @ts-expect-error Server Component */}
+                <SpotifyPlaying />
+              </Suspense>
             </div>
           </div>
         </div>

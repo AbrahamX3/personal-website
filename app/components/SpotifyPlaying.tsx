@@ -7,7 +7,9 @@ async function GetSpotifyData() {
     return `http://localhost:${process.env.PORT ?? 3000}`;
   };
 
-  const res = await fetch(GetBaseUrl() + "/api/spotify", {
+  console.log(GetBaseUrl());
+  const url = GetBaseUrl() + "/api/spotify";
+  const res = await fetch(url, {
     next: { revalidate: 60 },
   });
 
