@@ -9,7 +9,7 @@ import About from "./components/About";
 export default function HomePage() {
   return (
     <>
-      <main className="w-full min-h-screen bg-gradient-3">
+      <main className="w-full min-h-screen bg-gradient">
         <div className="container grid grid-cols-1 gap-8 md:grid-cols-2 w-full min-h-screen mx-auto py-8 px-4 md:px-4 lg:px-2">
           <div className="flex flex-col col-span-1 justify-center space-y-6 align-middle">
             <Intro />
