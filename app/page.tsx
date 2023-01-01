@@ -26,7 +26,7 @@ export default function HomePage() {
     },
   ];
 
-  const { gradient } = gradients[Math.floor(Math.random() * gradients.length)];
+  const { gradient } = gradients[2];
 
   return (
     <>
