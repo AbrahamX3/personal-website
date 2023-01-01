@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import SpotifyLoading from "./components/SpotifyLoading";
 import SpotifyPlaying from "./components/SpotifyPlaying";
-import Link from "next/link";
 import Intro from "./components/Intro";
 import Skills from "./components/Skills";
 import Socials from "./components/Socials";

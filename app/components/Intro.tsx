@@ -10,7 +10,7 @@ export default function Intro() {
       </Balancer>
       <Balancer>
         <span className="text-xl text-white">
-          I&apos;m a web developer based in Baja California, Mexico.
+          I&apos;m a Full-Stack Web Developer based in Baja California, Mexico.
         </span>
       </Balancer>
     </div>
