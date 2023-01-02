@@ -14,6 +14,9 @@ module.exports = {
         "cabinet-grotesk": ["var(--font-cabinet-grotesk)"],
         satoshi: ["var(--font-satoshi)"],
       },
+      screens: {
+        xs: "260px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],

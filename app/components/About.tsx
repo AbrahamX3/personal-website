@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="w-full text-white flex flex-col items-center justify-center align-middle">
-      <h2 className="text-xl text-white font-bold font-cabinet-grotesk py-6">
+      <h2 className="text-lg md:text-xl text-white font-bold font-cabinet-grotesk py-6">
         About Me
       </h2>
       <div className="flex flex-col items-center text-center align-middle space-y-6 w-full">

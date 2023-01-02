@@ -17,24 +17,20 @@ export default function Socials() {
   ];
 
   return (
-    <div>
-      <div className="flex flex-col items-center align-middle">
-        <div className="flex space-x-6 items-center align-middle text-white">
-          {Socials.map((social, index) => (
-            <Link
-              key={index}
-              title={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="mx-2 flex flex-col justify-center align-middle items-center rounded-lg text-center my-2 px-4 py-1 text-white border-2 transition-colors duration-150 ease-in border-white/10 hover:border-white/30 backdrop-blur-md bg-white/10">
-                {social.name}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
+    <div className="grid grid-cols-1 xs:grid-cols-3 gap-4 justify-items-center justify-center mx-auto">
+      {Socials.map((social, index) => (
+        <Link
+          key={index}
+          title={social.name}
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="rounded-lg text-center px-2 py-1 text-white border-2 transition-colors duration-150 ease-in border-white/10 hover:border-white/30 backdrop-blur-md bg-white/10">
+            {social.name}
+          </span>
+        </Link>
+      ))}
     </div>
   );
 }
