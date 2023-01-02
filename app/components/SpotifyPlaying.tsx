@@ -1,32 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
 
-function GetBaseUrl() {
-  const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-    ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL
-    : "http://localhost:3000";
-  return baseUrl;
-}
-
-async function GetSpotifyData() {
-  const url = GetBaseUrl() + "/api/spotify";
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+export default async function SpotifyPlaying() {
+  function GetBaseUrl() {
+    const baseUrl = process.env.BASE_URL
+      ? process.env.BASE_URL
+      : "http://localhost:3000";
+    return baseUrl;
   }
 
-  return res.json();
-}
+  async function GetSpotifyData() {
+    const url = GetBaseUrl() + "/api/spotify";
+    const res = await fetch(url);
 
-export default async function SpotifyPlaying() {
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
   const data = await GetSpotifyData();
   return (
     <>
       {data.isPlaying ? (
         <div className="w-full">
           <div>
-            <div className="grid grid-cols-3 h-20 text-center place-self-center place-content-center place-items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
+            <div className="grid grid-cols-3 gap-4 h-20 text-center place-self-center place-content-center place-items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
               <div className="flex flex-col align-middle place-self-start">
                 <Image
                   src={data.cover}
@@ -34,7 +33,7 @@ export default async function SpotifyPlaying() {
                   title={data.title}
                   width={150}
                   height={150}
-                  className="w-16 h-16 aspect-square rounded-lg"
+                  className="xs:w-16 object-contain xs:h-16 w-full h-full aspect-square rounded-lg"
                 />
               </div>
               <div className="flex flex-col text-white overflow-hidde w-full space-y-1 align-middle">
@@ -45,7 +44,7 @@ export default async function SpotifyPlaying() {
                   title={data.title}
                   aria-label="Open Current Song on Spotify"
                 >
-                  {data.title}
+                  <span>{data.title}</span>
                 </Link>
                 <p className="truncate text-sm" title={data.artist}>
                   {data.artist}
