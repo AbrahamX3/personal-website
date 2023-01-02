@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-const GetBaseUrl = () => {
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return `http://localhost:${process.env.PORT ?? 3000}`;
-};
+
+function GetBaseUrl() {
+  const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+    ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL
+    : "http://localhost:3000";
+  return baseUrl;
+}
 
 async function GetSpotifyData() {
   const url = GetBaseUrl() + "/api/spotify";
