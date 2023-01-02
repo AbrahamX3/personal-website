@@ -1,6 +1,6 @@
-// import { Suspense } from "react";
-// import SpotifyLoading from "./components/SpotifyLoading";
-// import SpotifyPlaying from "./components/SpotifyPlaying";
+import { Suspense } from "react";
+import SpotifyLoading from "./components/SpotifyLoading";
+import SpotifyPlaying from "./components/SpotifyPlaying";
 import Intro from "./components/Intro";
 import Skills from "./components/Skills";
 import Socials from "./components/Socials";
@@ -19,11 +19,12 @@ export default function HomePage() {
 
           <div className="flex flex-col col-span-1 justify-center mx-auto space-y-6 align-middle">
             <About />
-            {/* <div className="mx-auto w-full md:w-full lg:1/2">
+            <div className="mx-auto w-full md:w-full lg:1/2">
               <Suspense fallback={<SpotifyLoading />}>
+                {/* @ts-expect-error Server Component */}
                 <SpotifyPlaying />
               </Suspense>
-            </div> */}
+            </div>
           </div>
         </div>
       </main>

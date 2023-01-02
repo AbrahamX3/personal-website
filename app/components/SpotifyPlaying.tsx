@@ -7,11 +7,8 @@ async function GetSpotifyData() {
     return `http://localhost:${process.env.PORT ?? 3000}`;
   };
 
-  console.log(GetBaseUrl());
   const url = GetBaseUrl() + "/api/spotify";
-  const res = await fetch(url, {
-    next: { revalidate: 60 },
-  });
+  const res = await fetch(url);
 
   if (!res.ok) return { isPlaying: false };
 
