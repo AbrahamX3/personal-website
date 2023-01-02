@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+const GetBaseUrl = () => {
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+};
 
 async function GetSpotifyData() {
-  const GetBaseUrl = () => {
-    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-    return `http://localhost:${process.env.PORT ?? 3000}`;
-  };
-
   const url = GetBaseUrl() + "/api/spotify";
   const res = await fetch(url);
 
