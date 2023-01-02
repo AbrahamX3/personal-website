@@ -8,25 +8,24 @@ import About from "./components/About";
 import Link from "next/link";
 import Image from "next/image";
 
-function GetBaseUrl() {
-  const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-    ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL
-    : "http://localhost:3000";
-  return baseUrl;
-}
-
-async function GetSpotifyData() {
-  const url = GetBaseUrl() + "/api/spotify";
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+export default async function HomePage() {
+  function GetBaseUrl() {
+    const baseUrl = process.env.BASE_URL
+      ? process.env.BASE_URL
+      : "http://localhost:3000";
+    return baseUrl;
   }
 
-  return res.json();
-}
+  async function GetSpotifyData() {
+    const url = GetBaseUrl() + "/api/spotify";
+    const res = await fetch(url);
 
-export default async function HomePage() {
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
   const data = await GetSpotifyData();
   return (
     <>
