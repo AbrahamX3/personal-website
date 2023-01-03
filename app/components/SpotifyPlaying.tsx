@@ -35,6 +35,8 @@ export default async function SpotifyPlaying() {
                   title={data.title}
                   width={150}
                   height={150}
+                  placeholder="blur"
+                  blurDataURL={data.cover}
                   className="xs:w-16 object-contain xs:h-16 w-full h-full aspect-square rounded-lg"
                 />
               </div>
