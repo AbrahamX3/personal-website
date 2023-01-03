@@ -1,5 +1,3 @@
-import Balancer from "react-wrap-balancer";
-
 export default function Skills() {
   const Skills = [
     "NextJS",
