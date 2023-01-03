@@ -11,7 +11,10 @@ export default async function SpotifyPlaying() {
 
   async function GetSpotifyData() {
     const url = GetBaseUrl() + "/api/spotify";
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      next: { revalidate: 60 },
+      cache: "no-cache",
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -21,7 +24,7 @@ export default async function SpotifyPlaying() {
   }
 
   const data = await GetSpotifyData();
-  console.log(data);
+
   return (
     <>
       {data.isPlaying ? (
