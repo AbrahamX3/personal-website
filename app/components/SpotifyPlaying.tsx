@@ -19,7 +19,9 @@ export default async function SpotifyPlaying() {
 
     return res.json();
   }
+
   const data = await GetSpotifyData();
+  console.log(data);
   return (
     <>
       {data.isPlaying ? (
