@@ -8,17 +8,19 @@ export default function About() {
       </h2>
       <div className="flex flex-col items-center text-center align-middle space-y-6 w-full">
         <p className="box">
-          I love to explore and learn all type of old and new web technologies.
+          I love exploring and learning new and old web-related technologies!
         </p>
         <p className="box">
-          I love to drink and explore coffee, sometimes tea aswell!
+          I love drinking and exploring different types of coffee, as well as
+          tea!
         </p>
         <p className="box">
-          I&apos;m a gamer when I have time, I currently play Overwatch and
-          Minecraft. But I also enjoy playing other games from time to time.
+          I like to play video games when I have time. I currently play
+          Overwatch and Minecraft, but I also like to play other games from time
+          to time.
         </p>
         <p className="box">
-          I enjoy watching all type of movies and series with my family, check
+          I enjoy watching all kinds of movies and series with my family, check
           out my{" "}
           <Link
             rel="noopener noreferrer"
@@ -26,13 +28,13 @@ export default function About() {
             href="https://www.notion.so/abraham-/Abe-s-Watchlist-Homepage-b17e0e2e6ba644159735e32a6fe3817d"
           >
             <span className="font-bold hover:text-white/80 transition-colors duration-150 ease-in">
-              watchlist
+              watch list
             </span>
           </Link>{" "}
           on notion!
         </p>
         <p className="box">
-          I enjoy listening to all type of music, in fact, check out what
+          I enjoy listening to all kinds of music, in fact, check out what
           I&apos;m currently listening to right now below!
         </p>
       </div>
