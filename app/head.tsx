@@ -20,7 +20,7 @@ export default function Head() {
       />
       <meta
         property="og:image"
-        content="https://www.abraham-dev.tech/favicon.png"
+        content="https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="abraham-dev.tech" />
@@ -32,9 +32,13 @@ export default function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://www.abraham-dev.tech/favicon.png"
+        content="https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png"
       />
-      <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+      <link
+        rel="shortcut icon"
+        href="https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png"
+        type="image/x-icon"
+      />
     </>
   );
 }
