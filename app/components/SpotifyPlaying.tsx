@@ -1,6 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
+interface CurrentTrack {
+  isPlaying: boolean;
+  title: string;
+  artist: string;
+  url: string;
+  cover: string;
+  repeat_state: string;
+  shuffle_state: boolean;
+  progress_ms: number;
+  duration_ms: number;
+}
+
 export default async function SpotifyPlaying() {
   function GetBaseUrl() {
     const baseUrl = process.env.BASE_URL
@@ -10,17 +22,18 @@ export default async function SpotifyPlaying() {
   }
 
   async function GetSpotifyData() {
-    const url = GetBaseUrl() + "/api/spotify";
-    const res = await fetch(url);
+    const res = await fetch(GetBaseUrl() + "/api/spotify");
 
     if (!res.ok) {
-      throw new Error("Failed to fetch data");
+      return {
+        isPlaying: false,
+      };
     }
 
     return res.json();
   }
 
-  const data = await GetSpotifyData();
+  const data: CurrentTrack = await GetSpotifyData();
 
   return (
     <>
