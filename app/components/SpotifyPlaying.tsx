@@ -35,65 +35,60 @@ export default async function SpotifyPlaying() {
     <>
       {data.isPlaying ? (
         <div className="w-full">
-          <div>
-            <div className="grid h-20 cursor-pointer grid-cols-3 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
-              <div className="flex flex-col place-self-start align-middle">
-                <Image
-                  src={data.cover || ""}
-                  alt={data.title || ""}
-                  title={data.title}
-                  width={150}
-                  height={150}
-                  placeholder="blur"
-                  blurDataURL={data.cover}
-                  className="aspect-square h-full w-full rounded-lg object-contain xs:h-16 xs:w-16"
-                />
-              </div>
-              <div className="overflow-hidde flex w-full flex-col space-y-1 align-middle text-white">
-                <Link
-                  href={data.url || ""}
-                  target="_blank"
-                  className="truncate font-bold"
-                  title={data.title}
-                  aria-label="Open Current Song on Spotify"
+          <div className="grid h-20 cursor-pointer grid-cols-3 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
+            <div className="flex flex-col place-self-start align-middle">
+              <Image
+                src={data.cover || ""}
+                alt={data.title || ""}
+                title={data.title}
+                width={150}
+                height={150}
+                placeholder="blur"
+                blurDataURL={data.cover}
+                className="aspect-square h-full w-full rounded-lg object-contain xs:h-16 xs:w-16"
+              />
+            </div>
+            <div className="overflow-hidde flex w-full flex-col space-y-1 align-middle text-white">
+              <Link
+                href={data.url || ""}
+                target="_blank"
+                className="truncate font-bold"
+                title={data.title}
+                aria-label="Open Current Song on Spotify"
+              >
+                <span>{data.title}</span>
+              </Link>
+              <p className="truncate text-sm" title={data.artist}>
+                {data.artist}
+              </p>
+            </div>
+            <div className="ml-auto flex flex-col place-self-center align-middle">
+              <Link
+                href="https://open.spotify.com/user/reaker911x?si=865666beb0ca4d79"
+                target="_blank"
+                aria-label="Spotify Profile"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  viewBox="0 0 64 64"
+                  aria-label="Spotify Profile"
                 >
-                  <span>{data.title}</span>
-                </Link>
-                <p className="truncate text-sm" title={data.artist}>
-                  {data.artist}
-                </p>
-              </div>
-              <div className="ml-auto flex flex-col place-self-center align-middle">
-                <Link
-                  href="https://open.spotify.com/user/reaker911x?si=865666beb0ca4d79"
-                  target="_blank"
-                  aria-label="My Spotify Profile"
-                >
-                  <svg
-                    className="h-8 w-8"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 496 512"
-                    aria-label="Spotify Logo"
-                  >
-                    <path
-                      fill="#1ed760"
-                      d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8Z"
-                    />
-                    <path d="M406.6 231.1c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3zm-31 76.2c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm-26.9 65.6c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4z" />
-                  </svg>
-                </Link>
-              </div>
+                  <path
+                    fill="#ffffff"
+                    d="M32 0C14.3 0 0 14.337 0 32c0 17.7 14.337 32 32 32 17.7 0 32-14.337 32-32S49.663 0 32 0zm14.68 46.184c-.573.956-1.797 1.223-2.753.65-7.532-4.588-16.975-5.62-28.14-3.097-1.07.23-2.14-.42-2.37-1.49s.42-2.14 1.49-2.37c12.196-2.79 22.67-1.606 31.082 3.556a2 2 0 0 1 .688 2.753zm3.9-8.717c-.726 1.185-2.256 1.53-3.44.84-8.602-5.276-21.716-6.805-31.885-3.747-1.338.382-2.714-.344-3.097-1.644-.382-1.338.344-2.714 1.682-3.097 11.622-3.517 26.074-1.835 35.976 4.244 1.147.688 1.49 2.217.765 3.403zm.344-9.1c-10.323-6.117-27.336-6.69-37.2-3.708-1.568.497-3.25-.42-3.747-1.988s.42-3.25 1.988-3.747c11.317-3.44 30.127-2.753 41.98 4.282 1.415.84 1.873 2.676 1.032 4.09-.765 1.453-2.638 1.912-4.053 1.07z"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
       ) : (
         <div className="w-full">
-          <div>
-            <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
-              <span className="text-center text-lg font-semibold text-white">
-                No track is currently playing.
-              </span>
-            </div>
+          <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
+            <span className="text-center text-lg font-semibold text-white">
+              No track is currently playing.
+            </span>
           </div>
         </div>
       )}

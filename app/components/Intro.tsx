@@ -5,7 +5,7 @@ export default function Intro() {
         Hey, my name is Abraham!
       </span>
       <span className="text-base text-white md:text-xl">
-        I&apos;m a Full-Stack Web Developer based in Baja California, Mexico.
+        I&apos;m a Full-Stack Web Developer based in Baja California, Mexico
       </span>
     </div>
   );
