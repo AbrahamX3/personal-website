@@ -1,9 +1,9 @@
 export default function Loading() {
   return (
     <>
-      <main className="bg-gradient h-screen w-screen p-6">
+      <main className="bg-gradient flex h-full min-h-screen w-full flex-col justify-center align-middle">
         <div className="flex h-full w-full flex-col items-center justify-center align-middle">
-          <span className="box max-w-lg animate-pulse text-white md:max-w-xl">
+          <span className="max-w-lg animate-pulse font-cabinet-grotesk text-lg font-bold text-white md:max-w-xl md:text-xl">
             Loading page...
           </span>
         </div>

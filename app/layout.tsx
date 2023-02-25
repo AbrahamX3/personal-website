@@ -1,8 +1,8 @@
-export const dynamic = "force-dynamic";
-
 import "./globals.css";
 import localFont from "next/font/local";
-import { VercelAnalytics } from "./components/VercelAnalytics";
+import { VercelAnalytics } from "@/components/VercelAnalytics";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const satoshi = localFont({
   variable: "--font-satoshi",
@@ -40,7 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         <VercelAnalytics />
       </body>
     </html>

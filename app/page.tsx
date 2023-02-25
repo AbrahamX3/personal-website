@@ -1,11 +1,10 @@
-import { Suspense } from "react";
-import SpotifyLoading from "./components/SpotifyLoading";
-import SpotifyPlaying from "./components/SpotifyPlaying";
-import Intro from "./components/Intro";
-import Skills from "./components/Skills";
-import Socials from "./components/Socials";
-import About from "./components/About";
 import { Metadata } from "next";
+import { Suspense } from "react";
+import SpotifyLoading from "@/components/SpotifyLoading";
+import SpotifyPlaying from "@/components/SpotifyPlaying";
+import Intro from "@/components/Intro";
+import Skills from "@/components/Skills";
+import Socials from "@/components/Socials";
 
 export const metadata: Metadata = {
   title: "Abraham | Full-Stack Web Developer",
