@@ -13,15 +13,13 @@ interface ISpotifyTrack {
   duration_ms?: number;
 }
 
-export const dynamic = "force-dynamic";
-
 export default async function SpotifyPlaying() {
   async function GetSpotifyData(): Promise<ISpotifyTrack> {
     const res = await fetch(
       process.env.BASE_URL
         ? process.env.BASE_URL
         : "http://localhost:3000" + "/spotify",
-      { next: { revalidate: 60 } }
+      { method: "GET", cache: "no-cache" }
     );
 
     if (!res.ok) {
