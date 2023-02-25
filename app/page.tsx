@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   return (
     <>
-      <main className="bg-gradient min-h-screen w-full">
-        <div className="mx-auto flex h-screen w-full flex-col justify-center gap-y-5 p-4 align-middle">
+      <main className="bg-gradient flex h-full min-h-screen w-full flex-col justify-center align-middle">
+        <div className="mx-auto my-auto flex w-full flex-col justify-center gap-y-5 p-4 align-middle">
           <Intro />
           <Socials />
           <Skills />
