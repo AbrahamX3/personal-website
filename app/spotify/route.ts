@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
+import { NextResponse } from 'next/server'
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player";
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
@@ -17,10 +17,7 @@ interface Artist {
   uri: string;
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export async function GET(request: Request) {
   const responseRefreshToken = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
@@ -49,7 +46,7 @@ export default async function handler(
     SpotifyResponse.status == 204 ||
     SpotifyResponse.status == 401
   ) {
-    return res.status(200).json({
+    return NextResponse.json({
       isPlaying: false,
     });
   }
@@ -69,9 +66,10 @@ export default async function handler(
   } = await SpotifyResponse.json();
 
   const artist = artists.map(({ name }: Artist) => name).join(", ");
+
   const cover = images[0].url;
 
-  return res.status(200).json({
+  return NextResponse.json({
     isPlaying,
     title,
     artist,

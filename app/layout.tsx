@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import "./globals.css";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { VercelAnalytics } from "./components/VercelAnalytics";
 
 const satoshi = localFont({
@@ -32,6 +32,13 @@ export default function RootLayout({
       lang="en"
       className={`${satoshi.variable} ${cabinet_grotesk.variable} font-satoshi scroll-smooth scrollbar-track-white/20 scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-white/60 selection:bg-white/40 selection:text-black/50`}
     >
+      <head>
+        <link
+          rel="shortcut icon"
+          href="https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png"
+          type="image/x-icon"
+        />
+      </head>
       <body>
         {children}
         <VercelAnalytics />

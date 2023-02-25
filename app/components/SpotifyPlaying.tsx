@@ -22,7 +22,7 @@ export default async function SpotifyPlaying() {
   }
 
   async function GetSpotifyData() {
-    const res = await fetch(GetBaseUrl() + "/api/spotify");
+    const res = await fetch(GetBaseUrl() + "/spotify");
 
     if (!res.ok) {
       return {
