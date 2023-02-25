@@ -15,12 +15,10 @@ interface ISpotifyTrack {
 
 export default async function SpotifyPlaying() {
   async function GetSpotifyData(): Promise<ISpotifyTrack> {
-    const res = await fetch(
-      process.env.BASE_URL
-        ? process.env.BASE_URL
-        : "http://localhost:3000" + "/spotify",
-      { method: "GET", cache: "no-cache" }
-    );
+    const res = await fetch(process.env.BASE_URL + "/spotify", {
+      method: "GET",
+      cache: "no-cache",
+    });
 
     if (!res.ok) {
       return {

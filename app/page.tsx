@@ -6,7 +6,6 @@ import Skills from "./components/Skills";
 import Socials from "./components/Socials";
 import About from "./components/About";
 import { Metadata } from "next";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Abraham | Full-Stack Web Developer",
