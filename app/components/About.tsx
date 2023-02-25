@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="w-full text-white flex flex-col items-center justify-center align-middle">
-      <h2 className="text-lg md:text-xl text-white font-bold font-cabinet-grotesk py-6">
+    <div className="flex w-full flex-col items-center justify-center align-middle text-white">
+      <h2 className="py-6 font-cabinet-grotesk text-lg font-bold text-white md:text-xl">
         About Me
       </h2>
-      <div className="flex flex-col items-center text-center align-middle space-y-6 w-full">
+      <div className="flex w-full flex-col items-center space-y-6 text-center align-middle">
         <p className="box">
           I love exploring and learning new and old web-related technologies!
         </p>
@@ -27,7 +27,7 @@ export default function About() {
             target="_blank"
             href="https://www.notion.so/abraham-/Abe-s-Watchlist-Homepage-b17e0e2e6ba644159735e32a6fe3817d"
           >
-            <span className="font-bold hover:text-white/80 transition-colors duration-150 ease-in">
+            <span className="font-bold transition-colors duration-150 ease-in hover:text-white/80">
               watch list
             </span>
           </Link>{" "}

@@ -1,10 +1,10 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from 'next/server'
+import { NextResponse } from "next/server";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player";
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
+import { type NextRequest } from "next/server";
 
 interface Artist {
   external_urls: {
@@ -17,7 +17,7 @@ interface Artist {
   uri: string;
 }
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const responseRefreshToken = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {

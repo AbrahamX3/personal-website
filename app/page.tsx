@@ -31,17 +31,17 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   return (
     <>
-      <main className="w-full min-h-screen bg-gradient">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-2 min-h-screen mx-auto p-4">
-          <div className="flex flex-col col-span-1 justify-center space-y-6 align-middle">
+      <main className="bg-gradient min-h-screen w-full">
+        <div className="mx-auto grid min-h-screen grid-cols-1 gap-8 p-4 md:grid-cols-1 lg:grid-cols-2">
+          <div className="col-span-1 flex flex-col justify-center space-y-6 align-middle">
             <Intro />
             <Socials />
             <Skills />
           </div>
 
-          <div className="flex flex-col items-center col-span-1 justify-center mx-auto align-middle">
+          <div className="col-span-1 mx-auto flex flex-col items-center justify-center align-middle">
             <About />
-            <div className="mx-auto w-full md:w-full lg:1/2 mt-6">
+            <div className="lg:1/2 mx-auto mt-6 w-full md:w-full">
               <Suspense fallback={<SpotifyLoading />}>
                 {/* @ts-expect-error Server Component */}
                 <SpotifyPlaying />

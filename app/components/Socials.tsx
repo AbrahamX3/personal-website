@@ -17,7 +17,7 @@ export default function Socials() {
   ];
 
   return (
-    <div className="grid grid-cols-1 xs:grid-cols-3 gap-4 justify-items-center justify-center mx-auto">
+    <div className="mx-auto grid grid-cols-1 justify-center justify-items-center gap-4 xs:grid-cols-3">
       {Socials.map((social, index) => (
         <Link
           key={index}
@@ -26,7 +26,7 @@ export default function Socials() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="rounded-lg text-center px-2 py-1 text-white border-2 transition-colors duration-150 ease-in border-white/10 hover:border-white/30 backdrop-blur-md bg-white/10">
+          <span className="rounded-lg border-2 border-white/10 bg-white/10 px-2 py-1 text-center text-white backdrop-blur-md transition-colors duration-150 ease-in hover:border-white/30">
             {social.name}
           </span>
         </Link>

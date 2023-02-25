@@ -2,8 +2,8 @@ export default function SpotifyLoading() {
   return (
     <div className="w-full animate-pulse">
       <div>
-        <div className="flex flex-col h-20 text-center justify-center align-middle items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
-          <span className="text-center text-white font-semibold text-lg">
+        <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
+          <span className="text-center text-lg font-semibold text-white">
             Loading track...
           </span>
         </div>

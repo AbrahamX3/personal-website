@@ -1,28 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
 
-interface CurrentTrack {
+interface ISpotifyTrack {
   isPlaying: boolean;
-  title: string;
-  artist: string;
-  url: string;
-  cover: string;
-  repeat_state: string;
-  shuffle_state: boolean;
-  progress_ms: number;
-  duration_ms: number;
+  title?: string;
+  artist?: string;
+  url?: string;
+  cover?: string;
+  repeat_state?: string;
+  shuffle_state?: boolean;
+  progress_ms?: number;
+  duration_ms?: number;
 }
 
-export default async function SpotifyPlaying() {
-  function GetBaseUrl() {
-    const baseUrl = process.env.BASE_URL
-      ? process.env.BASE_URL
-      : "http://localhost:3000";
-    return baseUrl;
-  }
+export const dynamic = "force-dynamic";
 
-  async function GetSpotifyData() {
-    const res = await fetch(GetBaseUrl() + "/spotify");
+export default async function SpotifyPlaying() {
+  async function GetSpotifyData(): Promise<ISpotifyTrack> {
+    const res = await fetch(
+      process.env.BASE_URL
+        ? process.env.BASE_URL
+        : "http://localhost:3000" + "/spotify",
+      { next: { revalidate: 60 } }
+    );
 
     if (!res.ok) {
       return {
@@ -33,29 +33,29 @@ export default async function SpotifyPlaying() {
     return res.json();
   }
 
-  const data: CurrentTrack = await GetSpotifyData();
+  const data: ISpotifyTrack = await GetSpotifyData();
 
   return (
     <>
       {data.isPlaying ? (
         <div className="w-full">
           <div>
-            <div className="grid grid-cols-3 gap-4 h-20 text-center place-self-center place-content-center place-items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
-              <div className="flex flex-col align-middle place-self-start">
+            <div className="grid h-20 cursor-pointer grid-cols-3 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
+              <div className="flex flex-col place-self-start align-middle">
                 <Image
-                  src={data.cover}
-                  alt={data.title}
+                  src={data.cover || ""}
+                  alt={data.title || ""}
                   title={data.title}
                   width={150}
                   height={150}
                   placeholder="blur"
                   blurDataURL={data.cover}
-                  className="xs:w-16 object-contain xs:h-16 w-full h-full aspect-square rounded-lg"
+                  className="aspect-square h-full w-full rounded-lg object-contain xs:h-16 xs:w-16"
                 />
               </div>
-              <div className="flex flex-col text-white overflow-hidde w-full space-y-1 align-middle">
+              <div className="overflow-hidde flex w-full flex-col space-y-1 align-middle text-white">
                 <Link
-                  href={data.url}
+                  href={data.url || ""}
                   target="_blank"
                   className="truncate font-bold"
                   title={data.title}
@@ -67,14 +67,14 @@ export default async function SpotifyPlaying() {
                   {data.artist}
                 </p>
               </div>
-              <div className="flex flex-col align-middle place-self-center ml-auto">
+              <div className="ml-auto flex flex-col place-self-center align-middle">
                 <Link
                   href="https://open.spotify.com/user/reaker911x?si=865666beb0ca4d79"
                   target="_blank"
                   aria-label="My Spotify Profile"
                 >
                   <svg
-                    className="w-8 h-8"
+                    className="h-8 w-8"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 496 512"
                     aria-label="Spotify Logo"
@@ -93,8 +93,8 @@ export default async function SpotifyPlaying() {
       ) : (
         <div className="w-full">
           <div>
-            <div className="flex flex-col h-20 text-center justify-center align-middle items-center rounded-lg shadow-md cursor-pointer bg-white/10 border-2 border-white/30 backdrop-blur-md p-2">
-              <span className="text-center text-white font-semibold text-lg">
+            <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
+              <span className="text-center text-lg font-semibold text-white">
                 No track is currently playing.
               </span>
             </div>
