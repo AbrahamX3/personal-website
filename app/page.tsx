@@ -31,7 +31,7 @@ export default async function HomePage() {
   return (
     <>
       <main className="bg-gradient min-h-screen w-full">
-        <div className="mx-auto flex h-screen max-w-md flex-col items-center justify-center gap-y-5 p-4 md:max-w-3xl">
+        <div className="mx-auto flex h-screen w-full flex-col justify-center gap-y-5 p-4 align-middle">
           <Intro />
           <Socials />
           <Skills />

@@ -31,7 +31,7 @@ export default function Skills() {
           Technologies I work with
         </h2>
       </div>
-      <div className="w-full max-w-md px-4 md:max-w-3xl">
+      <div className="mx-auto w-full rounded-md md:w-1/2">
         <div className="flex w-full overflow-hidden py-4 scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
           <div className="flex items-center justify-center space-x-4 py-2 text-center align-middle text-white">
             {Skills.map((skill) => (

@@ -34,7 +34,7 @@ export default async function SpotifyPlaying() {
   return (
     <>
       {data.isPlaying ? (
-        <div className="w-full">
+        <div className="mx-auto w-full md:w-1/2">
           <div className="grid h-20 cursor-pointer grid-cols-3 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
             <div className="flex flex-col place-self-start align-middle">
               <Image
@@ -84,7 +84,7 @@ export default async function SpotifyPlaying() {
           </div>
         </div>
       ) : (
-        <div className="w-full">
+        <div className="mx-auto w-full md:w-1/2">
           <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
             <span className="text-center text-lg font-semibold text-white">
               No track is currently playing.
