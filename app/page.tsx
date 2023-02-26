@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { Suspense } from "react";
 import SpotifyLoading from "@/components/SpotifyLoading";
 import SpotifyPlaying from "@/components/SpotifyPlaying";
@@ -6,9 +5,17 @@ import Intro from "@/components/Intro";
 import Skills from "@/components/Skills";
 import Socials from "@/components/Socials";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+export const metadata = {
   title: "Abraham | Full-Stack Web Developer",
   description: "Abraham's Personal Website - Full-Stack Web Developer",
+  keywords: ["Next.js", "React", "TypeScript", "Web Developer", "Full-Stack"],
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Abraham | Full-Stack Web Developer",
     description: "Abraham's Personal Website - Full-Stack Web Developer",
@@ -23,6 +30,17 @@ export const metadata: Metadata = {
     ],
     locale: "en-US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abraham | Full-Stack Web Developer",
+    description: "Abraham's Personal Website - Full-Stack Web Developer",
+    siteId: "3038180873",
+    creator: "@x3_abe",
+    creatorId: "3038180873",
+    images: [
+      "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
+    ],
   },
 };
 

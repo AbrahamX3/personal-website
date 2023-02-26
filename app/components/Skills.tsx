@@ -1,6 +1,6 @@
 export default function Skills() {
   const Skills = [
-    "Next.JS",
+    "Next.js",
     "Prisma",
     "tRPC",
     "TailwindCSS",
