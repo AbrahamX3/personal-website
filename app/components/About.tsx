@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function About() {
   return (
     <div className="flex w-full flex-col items-center justify-center align-middle text-white">
@@ -22,7 +20,7 @@ export default function About() {
         <p className="box">
           I enjoy watching all kinds of movies and series with my family, check
           out my{" "}
-          <Link
+          <a
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.notion.so/abraham-/Abe-s-Watchlist-Homepage-b17e0e2e6ba644159735e32a6fe3817d"
@@ -30,7 +28,7 @@ export default function About() {
             <span className="font-bold transition-colors duration-150 ease-in hover:text-white/80">
               watch list
             </span>
-          </Link>{" "}
+          </a>{" "}
           on notion!
         </p>
         <p className="box">
