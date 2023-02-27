@@ -25,11 +25,11 @@ export default function Skills() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center align-middle">
+    <section className="flex flex-col items-center justify-center align-middle">
       <div className="w-full text-center">
-        <h2 className="pt-6 font-cabinet-grotesk text-lg font-bold text-white md:text-xl">
+        <h3 className="pt-6 font-cabinet-grotesk text-lg font-bold text-white md:text-xl">
           Technologies I work with
-        </h2>
+        </h3>
       </div>
       <div className="mx-auto w-full rounded-md md:w-1/2">
         <div className="flex w-full overflow-hidden py-4 scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
@@ -45,6 +45,6 @@ export default function Skills() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

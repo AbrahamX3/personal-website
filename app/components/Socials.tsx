@@ -15,7 +15,7 @@ export default function Socials() {
   ];
 
   return (
-    <div className="mx-auto grid grid-cols-1 justify-center justify-items-center gap-4 xs:grid-cols-3">
+    <section className="mx-auto grid grid-cols-1 justify-center justify-items-center gap-4 xs:grid-cols-3">
       {Socials.map((social, index) => (
         <a
           key={index}
@@ -29,6 +29,6 @@ export default function Socials() {
           </span>
         </a>
       ))}
-    </div>
+    </section>
   );
 }
