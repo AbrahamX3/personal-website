@@ -4,7 +4,7 @@ export default function Intro() {
       <h1 className="font-cabinet-grotesk text-2xl font-bold text-white md:text-3xl lg:text-5xl">
         Hey, my name is Abraham!
       </h1>
-      <h2 className="md:text-md text-base text-white lg:text-xl">
+      <h2 className="lg:text-md text-sm text-white md:text-lg">
         I&apos;m a Full-Stack Web Developer based in Baja California, Mexico
       </h2>
     </section>
