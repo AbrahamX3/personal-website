@@ -8,24 +8,38 @@ import Socials from "@/components/Socials";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Abraham | Full-Stack Web Developer",
-  description: "Abraham's Personal Website - Full-Stack Web Developer",
-  keywords: ["Next.js", "React", "TypeScript", "Web Developer", "Full-Stack"],
+  title: "Abraham",
+  description: "Gamer & Full-Stack Web Developer",
+  keywords: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Web Developer",
+    "Full-Stack",
+    "Gamer",
+  ],
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Abraham | Full-Stack Web Developer",
-    description: "Abraham's Personal Website - Full-Stack Web Developer",
+    title: "Abraham",
+    description: "Gamer & Full-Stack Web Developer",
     url: "https://abraham-dev.tech/",
     siteName: "Abraham | Full-Stack Web Developer",
     images: [
       {
         url: "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
-        width: 1002,
-        height: 1002,
+        width: 800,
+        height: 600,
+        alt: "Abraham Icon",
+      },
+      {
+        url: "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
+        width: 1800,
+        height: 1600,
+        alt: "Abraham Icon",
       },
     ],
     locale: "en-US",
@@ -34,13 +48,26 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Abraham | Full-Stack Web Developer",
-    description: "Abraham's Personal Website - Full-Stack Web Developer",
+    description: "Gamer & Full-Stack Web Developer",
     siteId: "3038180873",
     creator: "@x3_abe",
     creatorId: "3038180873",
     images: [
       "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
     ],
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
