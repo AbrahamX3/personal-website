@@ -1,12 +1,7 @@
 import { NextResponse } from "next/server";
-const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
-const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player";
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
-import { type NextRequest } from "next/server";
+import { env } from "@/env.mjs";
 
-interface Artist {
+interface Track {
   external_urls: {
     spotify: string;
   };
@@ -17,24 +12,29 @@ interface Artist {
   uri: string;
 }
 
-export async function GET(request: NextRequest) {
-  const responseRefreshToken = await fetch(TOKEN_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization:
-        "Basic " +
-        Buffer.from(CLIENT_ID + ":" + CLIENT_SECRET).toString("base64"),
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({
-      grant_type: "refresh_token",
-      refresh_token: REFRESH_TOKEN || "",
-    }),
-  });
+export async function GET() {
+  const responseRefreshToken = await fetch(
+    "https://accounts.spotify.com/api/token",
+    {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Basic " +
+          Buffer.from(
+            env.SPOTIFY_CLIENT_ID + ":" + env.SPOTIFY_CLIENT_SECRET
+          ).toString("base64"),
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        grant_type: "refresh_token",
+        refresh_token: env.SPOTIFY_REFRESH_TOKEN,
+      }),
+    }
+  );
 
   const { access_token } = await responseRefreshToken.json();
 
-  const SpotifyResponse = await fetch(NOW_PLAYING_ENDPOINT, {
+  const SpotifyResponse = await fetch("https://api.spotify.com/v1/me/player", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -66,7 +66,7 @@ export async function GET(request: NextRequest) {
     },
   } = await SpotifyResponse.json();
 
-  const artist = artists.map(({ name }: Artist) => name).join(", ");
+  const artist = artists.map(({ name }: Track) => name).join(", ");
 
   const cover = images[0].url;
 

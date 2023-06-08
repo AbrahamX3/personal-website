@@ -1,7 +1,7 @@
 # Abraham's Personal Website
 
-## Tech used:
+## Technologies used:
 
-- [Next.JS](https://nextjs.org/) - Framework
-- [TailwindCSS](https://tailwindcss.com/) - Styling
-- [Vercel](https://vercel.app/) - Hosting
+- Framework - [Next.JS](https://nextjs.org/)
+- Styling - [TailwindCSS](https://tailwindcss.com/)
+- Hosting - [Vercel](https://vercel.app/)

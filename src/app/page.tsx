@@ -4,6 +4,7 @@ import SpotifyPlaying from "@/components/SpotifyPlaying";
 import Intro from "@/components/Intro";
 import Skills from "@/components/Skills";
 import Socials from "@/components/Socials";
+import Projects from "@/components/Projects";
 
 export const dynamic = "force-dynamic";
 
@@ -18,10 +19,9 @@ export const metadata = {
     "full-stack",
     "gamer",
     "abraham",
-    "stack",
+    "web stack",
     "developer",
-    "baja",
-    "based",
+    "baja california",
   ],
   formatDetection: {
     email: false,
@@ -83,9 +83,9 @@ export default async function HomePage() {
         <div className="mx-auto my-auto flex w-full flex-col justify-center gap-y-5 p-4 align-middle">
           <Intro />
           <Socials />
+          <Projects />
           <Skills />
           <Suspense fallback={<SpotifyLoading />}>
-            {/* @ts-expect-error Server Component */}
             <SpotifyPlaying />
           </Suspense>
         </div>

@@ -1,14 +1,15 @@
 import "./globals.css";
+
 import localFont from "next/font/local";
-import { VercelAnalytics } from "@/components/VercelAnalytics";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { Analytics } from "@vercel/analytics/react";
 
 const satoshi = localFont({
   variable: "--font-satoshi",
   src: [
     {
-      path: "./fonts/Satoshi-Medium.woff2",
+      path: "../fonts/Satoshi-Medium.woff2",
     },
   ],
 });
@@ -17,7 +18,7 @@ const cabinet_grotesk = localFont({
   variable: "--font-cabinet-grotesk",
   src: [
     {
-      path: "./fonts/CabinetGrotesk-Extrabold.woff2",
+      path: "../fonts/CabinetGrotesk-Extrabold.woff2",
     },
   ],
 });
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${satoshi.variable} ${cabinet_grotesk.variable} scroll-smooth font-satoshi scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-thumb-rounded-md selection:bg-white/40 selection:text-black/50`}
     >
       <head>
@@ -41,7 +43,7 @@ export default function RootLayout({
       </head>
       <body>
         <Suspense fallback={<Loading />}>{children}</Suspense>
-        <VercelAnalytics />
+        <Analytics />
       </body>
     </html>
   );

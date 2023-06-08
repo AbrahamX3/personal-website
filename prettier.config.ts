@@ -1,3 +1,4 @@
+// @ts-check
 module.exports = {
   arrowParens: "always",
   bracketSameLine: false,
