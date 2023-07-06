@@ -40,7 +40,7 @@ export async function GET() {
       Authorization: `Bearer ${access_token}`,
     },
     next: {
-      revalidate: 10,
+      revalidate: 0,
     },
   });
 
