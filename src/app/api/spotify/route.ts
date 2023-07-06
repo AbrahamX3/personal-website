@@ -12,6 +12,8 @@ interface Track {
   uri: string;
 }
 
+export const fetchCache = "force-no-store";
+
 export async function GET() {
   const responseRefreshToken = await fetch(
     "https://accounts.spotify.com/api/token",
@@ -39,7 +41,6 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
   });
 
   if (
