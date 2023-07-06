@@ -5,7 +5,7 @@ export default function Intro() {
         Hey, my name is Abraham!
       </h1>
       <h2 className="lg:text-md text-sm text-white md:text-lg">
-       Full-Stack Developer based in Baja California, Mexico
+        Full-Stack Web Developer based in Baja California, Mexico
       </h2>
     </section>
   );

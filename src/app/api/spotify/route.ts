@@ -12,6 +12,10 @@ interface Track {
   uri: string;
 }
 
+export const config = {
+  runtime: "edge",
+};
+
 export async function GET() {
   const responseRefreshToken = await fetch(
     "https://accounts.spotify.com/api/token",
@@ -39,7 +43,7 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
+    cache: "no-cache",
   });
 
   if (
@@ -66,19 +70,21 @@ export async function GET() {
     },
   } = await SpotifyResponse.json();
 
-  const artist = artists.map(({ name }: Track) => name).join(", ");
+  const artist_name = artists.map(({ name }: Track) => name).join(", ");
+  const artist_url = artists[0].external_urls.spotify;
 
   const cover = images[0].url;
 
   return NextResponse.json({
     isPlaying,
     title,
-    artist,
+    artist_name,
     url,
     cover,
     repeat_state,
     shuffle_state,
     progress_ms,
     duration_ms,
+    artist_url,
   });
 }

@@ -5,7 +5,8 @@ import { GetBaseURL } from "@/app/utils";
 interface ISpotifyTrack {
   isPlaying: boolean;
   title?: string;
-  artist?: string;
+  artist_name?: string;
+  artist_url?: string;
   url?: string;
   cover?: string;
   repeat_state?: string;
@@ -59,9 +60,17 @@ export default async function SpotifyPlaying() {
               >
                 <span>{data.title}</span>
               </a>
-              <p className="truncate text-sm" title={data.artist}>
-                {data.artist}
-              </p>
+              <a
+                href={data.artist_url}
+                target="_blank"
+                className="truncate font-bold"
+                title={data.title}
+                aria-label="Open Current Song on Spotify"
+              >
+                <p className="truncate text-sm" title={data.artist_name}>
+                  {data.artist_name}
+                </p>
+              </a>
             </div>
             <div className="ml-auto flex flex-col place-self-center align-middle">
               <a

@@ -9,7 +9,7 @@ import Projects from "@/components/Projects";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Abraham",
+  title: "Abraham | Full-Stack Web Developer",
   description: "Gamer & Full-Stack Web Developer",
   keywords: [
     "next.js",
