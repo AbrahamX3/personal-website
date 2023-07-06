@@ -40,11 +40,10 @@ export async function GET() {
       Authorization: `Bearer ${access_token}`,
     },
     next: {
-      revalidate: 0,
+      revalidate: 10,
     },
   });
 
-  console.log(await SpotifyResponse.json());
   if (
     SpotifyResponse.status == 202 ||
     SpotifyResponse.status == 204 ||
