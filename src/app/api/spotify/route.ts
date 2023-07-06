@@ -34,14 +34,14 @@ export async function GET() {
     }
   );
 
-  const { access_token } = await responseRefreshToken.json();
+  const data = await responseRefreshToken.json();
 
-  console.log(access_token);
+  console.log(data);
 
   const SpotifyResponse = await fetch("https://api.spotify.com/v1/me/player", {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${access_token}`,
+      Authorization: `Bearer ${data.access_token}`,
     },
     cache: "no-cache",
   });
@@ -56,6 +56,9 @@ export async function GET() {
     });
   }
 
+  const spotify_data = await SpotifyResponse.json();
+
+  console.log(spotify_data);
   const {
     is_playing: isPlaying,
     repeat_state,
@@ -68,7 +71,7 @@ export async function GET() {
       name: title,
       duration_ms,
     },
-  } = await SpotifyResponse.json();
+  } = spotify_data;
 
   const artist_name = artists.map(({ name }: Track) => name).join(", ");
   const artist_url = artists[0].external_urls.spotify;
