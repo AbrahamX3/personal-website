@@ -12,7 +12,7 @@ interface Track {
   uri: string;
 }
 
-export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const responseRefreshToken = await fetch(
@@ -31,7 +31,9 @@ export async function GET() {
         grant_type: "refresh_token",
         refresh_token: env.SPOTIFY_REFRESH_TOKEN,
       }),
-      cache: "no-store",
+      next: {
+        revalidate: 0,
+      },
     }
   );
 
@@ -42,7 +44,9 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
+    next: {
+      revalidate: 0,
+    },
   });
 
   if (

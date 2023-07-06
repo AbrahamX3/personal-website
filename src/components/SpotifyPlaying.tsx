@@ -15,13 +15,15 @@ interface ISpotifyTrack {
   duration_ms?: number;
 }
 
-export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
 
 export default async function SpotifyPlaying() {
   async function GetSpotifyData(): Promise<ISpotifyTrack> {
     const res = await fetch(GetBaseURL() + "/api/spotify", {
       method: "GET",
-      cache: "no-store",
+      next: {
+        revalidate: 0,
+      },
     });
 
     if (!res.ok) {
