@@ -36,14 +36,14 @@ export async function GET() {
 
   const { access_token } = await responseRefreshToken.json();
 
+  console.log(access_token);
+
   const SpotifyResponse = await fetch("https://api.spotify.com/v1/me/player", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    next: {
-      revalidate: 10,
-    },
+    cache: "no-cache",
   });
 
   if (
