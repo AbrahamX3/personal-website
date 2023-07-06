@@ -33,6 +33,7 @@ export default async function SpotifyPlaying() {
 
   const data: ISpotifyTrack = await GetSpotifyData();
 
+  console.log(data);
   return (
     <>
       {data.isPlaying ? (
