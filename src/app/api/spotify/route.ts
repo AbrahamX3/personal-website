@@ -31,6 +31,7 @@ export async function GET() {
         grant_type: "refresh_token",
         refresh_token: env.SPOTIFY_REFRESH_TOKEN,
       }),
+      cache: "no-store",
     }
   );
 
@@ -41,6 +42,7 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
 
   if (

@@ -21,6 +21,7 @@ export default async function SpotifyPlaying() {
   async function GetSpotifyData(): Promise<ISpotifyTrack> {
     const res = await fetch(GetBaseURL() + "/api/spotify", {
       method: "GET",
+      cache: "no-store",
     });
 
     if (!res.ok) {
