@@ -12,9 +12,7 @@ interface Track {
   uri: string;
 }
 
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge";
 
 export async function GET() {
   const responseRefreshToken = await fetch(
