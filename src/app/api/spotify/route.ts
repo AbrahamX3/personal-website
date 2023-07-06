@@ -39,9 +39,12 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
+    next: {
+      revalidate: 0,
+    },
   });
 
+  console.log(await SpotifyResponse.json());
   if (
     SpotifyResponse.status == 202 ||
     SpotifyResponse.status == 204 ||

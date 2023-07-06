@@ -17,10 +17,14 @@ export default function Socials() {
       name: "Twitter",
       url: "https://twitter.com/x3_abe",
     },
+    {
+      name: "Threads",
+      url: "https://www.threads.net/@abe_x3",
+    },
   ];
 
   return (
-    <section className="mx-auto grid grid-cols-1 justify-center justify-items-center gap-4 xs:grid-cols-3">
+    <section className="mx-auto grid grid-cols-2 justify-center justify-items-center gap-4 xs:grid-cols-2 sm:grid-cols-4">
       {socials.map((social) => (
         <a
           key={social.name}
