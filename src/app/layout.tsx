@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { Analytics } from "@vercel/analytics/react";
+import Loglib from "@loglib/tracker/react";
 
 const satoshi = localFont({
   variable: "--font-satoshi",
@@ -44,6 +45,12 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <Analytics />
+        <Loglib
+          config={{
+            id: "abraham",
+            host: "https://www.loglib.io",
+          }}
+        />
       </body>
     </html>
   );
