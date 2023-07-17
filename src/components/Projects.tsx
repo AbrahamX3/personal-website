@@ -18,6 +18,11 @@ export default function Projects() {
       url: "https://github.com/AbrahamX3/personal-website",
       icon: Github,
     },
+    {
+      name: "Image Color Picker",
+      url: "https://color.abraham-dev.tech/",
+      icon: Link,
+    },
   ];
 
   return (
@@ -28,7 +33,7 @@ export default function Projects() {
         </h3>
       </div>
       <div className="mx-auto w-full rounded-md md:w-1/2">
-        <div className="flex w-full flex-wrap justify-center gap-x-2 py-4 scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
+        <div className="flex w-full flex-wrap justify-center gap-2 py-4 scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
           {projects.map((project) => (
             <a
               target="_blank"
