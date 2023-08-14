@@ -20,7 +20,7 @@ export default function Socials() {
   ];
 
   return (
-    <section className="mx-auto grid grid-cols-2 justify-center justify-items-center gap-4 xs:grid-cols-2 sm:grid-cols-4">
+    <section className="mx-auto grid grid-cols-2 justify-center justify-items-center gap-4 xs:grid-cols-2 sm:grid-cols-3">
       {socials.map((social) => (
         <a
           key={social.name}
