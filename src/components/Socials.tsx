@@ -17,10 +17,6 @@ export default function Socials() {
       name: "Twitter",
       url: "https://twitter.com/x3_abe",
     },
-    {
-      name: "Threads",
-      url: "https://www.threads.net/@abe_x3",
-    },
   ];
 
   return (
