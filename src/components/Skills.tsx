@@ -16,6 +16,15 @@ export default function Skills() {
     "MySQL",
     "PostgrSQL",
     ".NET",
+    "React Native",
+    "Expo",
+    "React Query",
+    "Redux",
+    "Zustand",
+    "Auth.js",
+    "Clerk",
+    "shadcn/ui",
+    "Tamagui",
     "Bootstrap",
     "NodeJS",
     "JQuery",
@@ -28,7 +37,7 @@ export default function Skills() {
     <section className="flex flex-col items-center justify-center align-middle">
       <div className="w-full text-center">
         <h3 className="font-cabinet-grotesk text-lg font-bold text-white md:text-xl">
-          Technologies I work with
+          My Tech Stack
         </h3>
       </div>
       <div className="mx-auto w-full rounded-md md:w-1/2">
@@ -37,7 +46,7 @@ export default function Skills() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-lg border-2 border-white/30 bg-white/10 px-2 backdrop-blur-md"
+                className="rounded-lg w-max border-2 border-white/30 bg-white/10 px-2 backdrop-blur-md"
               >
                 {skill}
               </span>
