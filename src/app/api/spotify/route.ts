@@ -23,7 +23,7 @@ export async function GET() {
         Authorization:
           "Basic " +
           Buffer.from(
-            env.SPOTIFY_CLIENT_ID + ":" + env.SPOTIFY_CLIENT_SECRET
+            env.SPOTIFY_CLIENT_ID + ":" + env.SPOTIFY_CLIENT_SECRET,
           ).toString("base64"),
         "Content-Type": "application/x-www-form-urlencoded",
       },
@@ -34,7 +34,7 @@ export async function GET() {
       next: {
         revalidate: 0,
       },
-    }
+    },
   );
 
   const { access_token } = await responseRefreshToken.json();

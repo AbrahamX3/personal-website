@@ -2,9 +2,9 @@ import { Suspense } from "react";
 import SpotifyLoading from "@/components/spotify-loading";
 import SpotifyPlaying from "@/components/spotify-playing";
 import Intro from "@/components/intro";
+import Projects from "@/components/projects";
 import TechStack from "@/components/skills";
 import Socials from "@/components/socials";
-import Projects from "@/components/projects";
 
 export const dynamic = "force-dynamic";
 
