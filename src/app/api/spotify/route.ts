@@ -80,14 +80,16 @@ export async function GET() {
 
   return NextResponse.json({
     isPlaying,
-    title,
-    artist_name,
-    url,
-    cover,
-    repeat_state,
-    shuffle_state,
-    progress_ms,
-    duration_ms,
-    artist_url,
+    track: {
+      title,
+      artist_name,
+      url,
+      cover,
+      repeat_state,
+      shuffle_state,
+      progress_ms,
+      duration_ms,
+      artist_url,
+    },
   });
 }

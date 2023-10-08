@@ -7,7 +7,6 @@ export const env = createEnv({
     SPOTIFY_CLIENT_SECRET: z.string(),
     SPOTIFY_REFRESH_TOKEN: z.string(),
   },
-  client: {},
   runtimeEnv: {
     SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
     SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,

@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import SpotifyLoading from "@/components/SpotifyLoading";
-import SpotifyPlaying from "@/components/SpotifyPlaying";
-import Intro from "@/components/Intro";
-import Skills from "@/components/Skills";
-import Socials from "@/components/Socials";
-import Projects from "@/components/Projects";
+import SpotifyLoading from "@/components/spotify-loading";
+import SpotifyPlaying from "@/components/spotify-playing";
+import Intro from "@/components/intro";
+import TechStack from "@/components/skills";
+import Socials from "@/components/socials";
+import Projects from "@/components/projects";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +23,7 @@ export const metadata = {
     "developer",
     "baja california",
   ],
+  metadataBase: new URL("https://www.abraham.lat"),
   formatDetection: {
     email: false,
     address: false,
@@ -31,20 +32,20 @@ export const metadata = {
   openGraph: {
     title: "Abraham",
     description: "Gamer & Full-Stack Web Developer",
-    url: "https://abraham-dev.tech/",
+    url: "https://abraham.lat",
     siteName: "Abraham | Full-Stack Web Developer",
     images: [
       {
-        url: "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
+        url: "https://abraham.lat/icon.webp",
         width: 800,
         height: 600,
-        alt: "Abraham Icon",
+        alt: "Abraham's Avatar",
       },
       {
-        url: "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
+        url: "https://abraham.lat/icon.webp",
         width: 1800,
         height: 1600,
-        alt: "Abraham Icon",
+        alt: "Abraham's Avatar",
       },
     ],
     locale: "en-US",
@@ -57,9 +58,7 @@ export const metadata = {
     siteId: "3038180873",
     creator: "@x3_abe",
     creatorId: "3038180873",
-    images: [
-      "https://res.cloudinary.com/dtv26hpd7/image/upload/ar_1:1,bo_1px_solid_rgb:ffffff,c_fill,g_auto,o_100,r_max,w_1000/v1672724832/abraham_icon.png",
-    ],
+    images: ["https://abraham.lat/icon.webp"],
   },
   robots: {
     index: false,
@@ -78,18 +77,16 @@ export const metadata = {
 
 export default async function HomePage() {
   return (
-    <>
-      <main className="bg-gradient flex h-full min-h-screen w-full flex-col justify-center align-middle">
-        <div className="mx-auto my-auto flex w-full flex-col justify-center gap-y-5 p-4 align-middle">
-          <Intro />
-          <Socials />
-          <Projects />
-          <Skills />
-          <Suspense fallback={<SpotifyLoading />}>
-            <SpotifyPlaying />
-          </Suspense>
-        </div>
-      </main>
-    </>
+    <main className="bg-gradient flex h-full min-h-screen w-full flex-col justify-center align-middle">
+      <div className="mx-auto my-auto flex w-full flex-col justify-center gap-y-5 p-4 align-middle">
+        <Intro />
+        <Socials />
+        <Projects />
+        <TechStack />
+        <Suspense fallback={<SpotifyLoading />}>
+          <SpotifyPlaying />
+        </Suspense>
+      </div>
+    </main>
   );
 }

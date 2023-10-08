@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
-module.exports = {
+export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -14,4 +14,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
-};
+} satisfies Config;
