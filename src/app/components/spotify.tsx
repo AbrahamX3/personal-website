@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
-import { GetBaseURL } from "@/app/utils";
+import { useLanyard } from "use-lanyard";
+import { env } from "~/env.mjs";
 
 interface SpotifyTrack {
   isPlaying: boolean;
@@ -16,43 +18,37 @@ interface SpotifyTrack {
   };
 }
 
-export const dynamic = "force-dynamic";
+export default function SpotifyPlaying() {
+  const { data, state } = useLanyard(
+    `${BigInt(env.NEXT_PUBLIC_DISCORD_USER_ID)}`
+  );
 
-async function fetchSpotifyTrack(): Promise<SpotifyTrack> {
-  const res = await fetch(GetBaseURL() + "/api/spotify", {
-    method: "GET",
-    next: {
-      revalidate: 0,
-    },
-  });
-
-  if (!res.ok) {
-    return {
-      isPlaying: false,
-    };
-  }
-
-  return res.json();
-}
-
-export default async function SpotifyPlaying() {
-  const spotify: SpotifyTrack = await fetchSpotifyTrack();
-  const { track } = spotify;
+  const spotify = data?.spotify;
 
   return (
     <section className="mx-auto w-full md:w-1/2">
-      {spotify.isPlaying && track ? (
-        <div className="grid h-20 cursor-pointer grid-cols-8 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
-          <div className="flex flex-col place-self-start align-middle">
-            {track.cover ? (
+      {state !== "loaded" ? (
+        <div className="mx-auto relative w-full animate-pulse">
+          <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
+            <span className="text-center z-10 text-lg font-semibold text-white">
+              Loading track...
+            </span>
+          </div>
+          <div className="absolute z-0 inset-0 overflow-hidden dark">
+            <div className="rays absolute -inset-3 opacity-20" />
+          </div>
+        </div>
+      ) : data?.listening_to_spotify ? (
+        <div className="grid h-20 relative grid-cols-8 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
+          <div className="flex flex-col z-10 place-self-start align-middle">
+            {spotify?.album_art_url ? (
               <Image
-                src={track.cover}
-                alt={track.title ?? "Spotify Cover"}
-                title={track.title}
+                unoptimized
+                src={spotify.album_art_url}
+                alt={spotify.album ?? "Spotify Cover"}
+                title={spotify.song}
                 width={150}
                 height={150}
-                placeholder="blur"
-                blurDataURL={track.cover}
                 className="aspect-square h-full w-full rounded-lg object-contain xs:h-16 xs:w-16"
               />
             ) : (
@@ -73,31 +69,24 @@ export default async function SpotifyPlaying() {
               </div>
             )}
           </div>
-          <div className="col-span-6 flex w-full flex-col gap-y-1 overflow-hidden align-middle text-white">
+          <div className="col-span-6 z-10 flex w-full flex-col gap-y-1 overflow-hidden align-middle text-white">
             <a
-              href={track.url}
+              href={`https://open.spotify.com/track/${spotify?.track_id}`}
               target="_blank"
-              className="truncate font-bold"
-              title={track.title}
+              className="truncate font-bold cursor-pointer"
+              title={spotify?.song}
               aria-label="Open Current Song on Spotify"
             >
-              <span>{track.title}</span>
+              <span>{spotify?.song}</span>
             </a>
-            <a
-              href={track.artist_url}
-              target="_blank"
-              className="truncate font-bold"
-              title={track.title}
-              aria-label="Open Current Song on Spotify"
-            >
-              <p className="truncate text-sm" title={track.artist_name}>
-                {track.artist_name}
-              </p>
-            </a>
+
+            <p className="text-sm truncate font-bold" title={spotify?.artist}>
+              {spotify?.artist}
+            </p>
           </div>
-          <div className="ml-auto flex flex-col place-self-center align-middle">
+          <div className="ml-auto flex z-10 flex-col place-self-center align-middle">
             <a
-              href="https://open.spotify.com/user/reaker911x?si=865666beb0ca4d79"
+              href="https://open.spotify.com/user/reaker911x"
               target="_blank"
               aria-label="Spotify Profile"
             >
@@ -114,16 +103,22 @@ export default async function SpotifyPlaying() {
               </svg>
             </a>
           </div>
+          <div className="absolute z-0 inset-0 overflow-hidden dark">
+            <div className="rays absolute -inset-3 opacity-20" />
+          </div>
         </div>
       ) : (
-        <div className="flex h-20 cursor-pointer flex-row items-center justify-between rounded-lg border-2 border-white/30 bg-white/10 p-4 text-center align-middle shadow-md backdrop-blur-md">
+        <div className="flex h-20 relative cursor-pointer flex-row items-center justify-between rounded-lg border-2 border-white/30 bg-white/10 p-4 text-center align-middle shadow-md backdrop-blur-md">
+          <div className="absolute inset-0 overflow-hidden dark">
+            <div className="rays absolute -inset-3 opacity-20" />
+          </div>
           <span className="text-center text-lg font-semibold text-white">
             Currently not playing any track.
           </span>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://open.spotify.com/user/reaker911x?si=3b28057987e841fe"
+            href="https://open.spotify.com/user/reaker911x"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

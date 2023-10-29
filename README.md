@@ -1,7 +1,14 @@
 # Abraham's Personal Website
 
-## Technologies used:
+#### Check it out here!
 
-- Framework - [Next.JS](https://nextjs.org/)
-- Styling - [TailwindCSS](https://tailwindcss.com/)
-- Hosting - [Vercel](https://vercel.app/)
+`https://abraham.lat`
+
+This is the repository for my personal website that showcases my projects, skills and a bit about me.
+
+## Tech Stack Used
+
+- [Next.js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Vercel](https://vercel.app/)
+- [Lanyard](https://github.com/Phineas/lanyard)

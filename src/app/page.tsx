@@ -1,16 +1,14 @@
-import { Suspense } from "react";
-import SpotifyLoading from "@/components/SpotifyLoading";
-import SpotifyPlaying from "@/components/SpotifyPlaying";
-import Intro from "@/components/Intro";
-import Projects from "@/components/Projects";
-import TechStack from "@/components/Skills";
-import Socials from "@/components/Socials";
+import Introduction from "~/app/components/introduction";
+import Projects from "~/app/components/projects";
+import TechStack from "~/app/components/skills";
+import Socials from "~/app/components/socials";
+import SpotifyPlaying from "~/app/components/spotify";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Abraham | Full-Stack Web Developer",
-  description: "Gamer & Full-Stack Web Developer",
+  description: "Full-Stack Web Developer, Gamer & Coffee Enthusiast",
   keywords: [
     "next.js",
     "react",
@@ -78,14 +76,15 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <main className="bg-gradient flex h-full min-h-screen w-full flex-col justify-center align-middle">
-      <div className="mx-auto my-auto flex w-full flex-col justify-center gap-y-5 p-4 align-middle">
-        <Intro />
+      <div className="mx-auto z-10 my-auto flex w-full flex-col justify-center gap-y-5 p-4 align-middle">
+        <Introduction />
         <Socials />
         <Projects />
         <TechStack />
-        <Suspense fallback={<SpotifyLoading />}>
-          <SpotifyPlaying />
-        </Suspense>
+        <SpotifyPlaying />
+      </div>
+      <div className="absolute z-0 rounded-md inset-0 overflow-hidden dark">
+        <div className="rays absolute -inset-3 opacity-20 group-hover/lights:opacity-70" />
       </div>
     </main>
   );

@@ -1,26 +1,27 @@
-import { LucideIcon, Github, Link } from "lucide-react";
+import { Github, Link } from "lucide-react";
+import RayLinkButton from "./rays-link-button";
 
 interface Project {
-  name: string;
+  label: string;
   url: string;
-  icon: LucideIcon;
+  icon: JSX.Element;
 }
 
 const projects: Project[] = [
   {
-    name: "Watchlist",
+    label: "Watchlist",
     url: "https://watchlist.abraham.lat",
-    icon: Link,
+    icon: <Link className="w-4 h-4" />,
   },
   {
-    name: "Personal Website",
+    label: "Personal Website",
     url: "https://github.com/AbrahamX3/personal-website",
-    icon: Github,
+    icon: <Github className="w-4 h-4" />,
   },
   {
-    name: "Image Color Picker",
+    label: "Image Color Picker",
     url: "https://color.abraham.lat",
-    icon: Link,
+    icon: <Link className="w-4 h-4" />,
   },
 ];
 
@@ -29,22 +30,13 @@ export default function Projects() {
     <section className="flex flex-col items-center justify-center align-middle">
       <div className="w-full text-center">
         <h3 className="pt-6 font-cabinet-grotesk text-lg font-bold text-white md:text-xl">
-          Personal Public Projects
+          Personal Projects
         </h3>
       </div>
       <div className="mx-auto w-full rounded-md md:w-1/2">
         <article className="flex w-full flex-wrap justify-center gap-2 py-4 scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
-          {projects.map((project) => (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              key={project.name}
-              href={project.url}
-              className="flex items-center gap-x-2 rounded-lg border-2 border-white/10 bg-white/10 px-2 py-1 text-center align-middle text-white backdrop-blur-md transition-colors duration-150 ease-in hover:border-white/30"
-            >
-              <project.icon className="h-4 w-4" />
-              <span>{project.name}</span>
-            </a>
+          {projects.map(({ icon, label, url }) => (
+            <RayLinkButton key={label} icon={icon} label={label} url={url} />
           ))}
         </article>
       </div>

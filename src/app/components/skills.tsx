@@ -38,7 +38,7 @@ export default function TechStack() {
     <section className="flex flex-col items-center justify-center align-middle">
       <div className="w-full text-center">
         <h3 className="font-cabinet-grotesk text-lg font-bold text-white md:text-xl">
-          My Tech Stack
+          Tech Stack
         </h3>
       </div>
       <div className="mx-auto w-full rounded-md md:w-1/2">

@@ -1,4 +1,4 @@
-export default function Intro() {
+export default function Introduction() {
   return (
     <section className="flex flex-col items-center gap-y-2 text-center align-middle">
       <h1 className="font-cabinet-grotesk text-2xl font-bold text-white md:text-3xl lg:text-5xl">
