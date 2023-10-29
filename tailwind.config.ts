@@ -5,8 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "cabinet-grotesk": ["var(--font-cabinet-grotesk)"],
-        satoshi: ["var(--font-satoshi)"],
+        sans: ["var(--font-geist-sans)"],
       },
       screens: {
         xs: "260px",
