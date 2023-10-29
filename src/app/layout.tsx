@@ -17,7 +17,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={clsx(
         GeistSans.className,
-        "scroll-smooth font-satoshi scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-thumb-rounded-md selection:bg-white/40 selection:text-black/50"
+        "scroll-smooth font-satoshi scrollbar-thin scrollbar-track-white/20 scrollbar-thumb-white/60 scrollbar-thumb-rounded-md selection:bg-white/40 selection:text-black/50",
       )}
     >
       <head>

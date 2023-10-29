@@ -20,7 +20,7 @@ interface SpotifyTrack {
 
 export default function SpotifyPlaying() {
   const { data, state } = useLanyard(
-    `${BigInt(env.NEXT_PUBLIC_DISCORD_USER_ID)}`
+    `${BigInt(env.NEXT_PUBLIC_DISCORD_USER_ID)}`,
   );
 
   const spotify = data?.spotify;
