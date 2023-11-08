@@ -47,7 +47,7 @@ export default function TechStack() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-lg w-max border-2 border-white/30 bg-white/10 px-2 backdrop-blur-md"
+                className="rounded-lg w-max border border-white/10 bg-white/10 px-2 backdrop-blur-sm"
               >
                 {skill}
               </span>

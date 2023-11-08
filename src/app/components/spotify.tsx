@@ -29,7 +29,7 @@ export default function SpotifyPlaying() {
     <section className="mx-auto w-full md:w-1/2">
       {state !== "loaded" ? (
         <div className="mx-auto relative w-full animate-pulse">
-          <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-md">
+          <div className="flex h-20 cursor-pointer flex-col items-center justify-center rounded-lg border border-white/10 bg-white/10 p-2 text-center align-middle shadow-md backdrop-blur-sm">
             <span className="text-center z-10 text-lg font-semibold text-white">
               Loading track...
             </span>
@@ -39,7 +39,7 @@ export default function SpotifyPlaying() {
           </div>
         </div>
       ) : data?.listening_to_spotify ? (
-        <div className="grid h-20 relative grid-cols-8 place-content-center place-items-center gap-4 place-self-center rounded-lg border-2 border-white/30 bg-white/10 p-2 text-center shadow-md backdrop-blur-md">
+        <div className="grid h-20 relative grid-cols-8 place-content-center place-items-center gap-4 place-self-center rounded-lg border border-white/10 bg-white/10 p-2 text-center shadow-md backdrop-blur-sm">
           <div className="flex flex-col z-10 place-self-start align-middle">
             {spotify?.album_art_url ? (
               <Image
@@ -52,7 +52,7 @@ export default function SpotifyPlaying() {
                 className="aspect-square h-full w-full rounded-lg object-contain xs:h-16 xs:w-16"
               />
             ) : (
-              <div className="aspect-square flex justify-center items-center h-20 w-20 border-white/30 bg-white/10 rounded-lg object-contain xs:h-16 xs:w-16">
+              <div className="aspect-square flex justify-center items-center h-20 w-20 border border-white/10 backdrop-blur-sm bg-white/10 rounded-lg object-contain xs:h-16 xs:w-16">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
